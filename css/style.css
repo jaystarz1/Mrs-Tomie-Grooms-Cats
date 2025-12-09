@@ -565,15 +565,16 @@ section {
 .benefit {
     text-align: center;
     padding: var(--spacing-lg);
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--primary-dark);
     border-radius: var(--radius-lg);
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all var(--transition-base);
 }
 
 .benefit:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: #3a0e47;
     transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.25);
 }
 
 .benefit-icon {
@@ -587,7 +588,7 @@ section {
 }
 
 .benefit p {
-    opacity: 0.9;
+    color: var(--white);
     margin: 0;
 }
 
@@ -744,6 +745,7 @@ section {
 }
 
 .map-wrapper {
+    position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -751,6 +753,29 @@ section {
 
 .map-wrapper iframe {
     display: block;
+}
+
+/* Service Area Circle Overlay */
+.service-area-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border: 4px solid var(--primary);
+    border-radius: 50%;
+    background: rgba(123, 45, 142, 0.15);
+    pointer-events: none;
+    box-shadow: 0 0 0 4px rgba(123, 45, 142, 0.1),
+                0 0 20px rgba(123, 45, 142, 0.2);
+}
+
+.map-note {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    font-style: italic;
+    margin-top: var(--spacing-sm);
 }
 
 /* =====================================================
@@ -779,8 +804,20 @@ section {
 }
 
 .contact-icon {
-    font-size: 1.5rem;
     flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-pale);
+    border-radius: var(--radius-md);
+    color: var(--primary);
+}
+
+.contact-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .contact-item strong {
