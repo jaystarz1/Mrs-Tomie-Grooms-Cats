@@ -92,10 +92,26 @@ typography:
 # NAVBAR - CRITICAL COMPONENT
 # ==============================================================================
 navbar:
+  visual_spec:
+    background:
+      is: "linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)"
+      is_not: white
+      is_not: transparent
+    text_color:
+      is: white
+      is_not: gray
+      is_not: dark
+    hover_color: "var(--accent)"  # Gold
+    layout:
+      is: "Logo left, nav items right, all on ONE LINE"
+      is_not: "Logo on separate line from nav"
+      is_not: "Stacked/vertical layout"
+
   container_class:
     is: "navbar"
     is_not: "nav"
     is_not: "navigation"
+    is_not: "header" # header is wrapper, not the navbar itself
 
   structure:
     is: |
@@ -109,10 +125,47 @@ navbar:
             <span></span><span></span><span></span>
           </button>
           <ul class="nav-menu">
-            <!-- Nav items here -->
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Services</a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="index.html#services">All Services</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Locations</a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="cat-grooming-toronto.html">Toronto</a></li>
+                <li><a href="cat-grooming-windsor.html">Windsor</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Cat Wiki</a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="history-of-cats.html">History of Cats</a></li>
+                <li><a href="cfmg-certification.html">CFMG Certification</a></li>
+                <li><a href="lion-cut-history.html">The Lion Cut</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#" class="nav-dropdown-toggle">Resources</a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="cat-resources-toronto.html">Toronto Cat Resources</a></li>
+                <li><a href="cat-resources-windsor.html">Windsor Cat Resources</a></li>
+              </ul>
+            </li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#contact" class="btn btn-primary">Book Now</a></li>
           </ul>
         </div>
       </nav>
+
+    is_not: |
+      <header class="header">
+        <nav class="navbar">...</nav>
+      </header>
+      # The header wrapper changes behavior - avoid on info pages
 
   logo:
     wrapper_element: "a"
@@ -120,6 +173,9 @@ navbar:
     class: "logo"
     icon_class: "logo-icon"
     text_class: "logo-text"
+    text_color:
+      is: white
+      is_not: "var(--primary-dark)"
     is_not: div wrapper
     is_not: span wrapper
 
@@ -413,6 +469,50 @@ common_mistakes:
   - mistake: "Using #section links on info pages"
     result: "404 errors or no navigation"
     fix: "Use index.html#section for main page sections"
+
+  - mistake: "Wrapping navbar in <header class='header'>"
+    result: "Different layout behavior, potential white background"
+    fix: "Use bare <nav class='navbar'> on info pages"
+
+  - mistake: "Dark/gray text on purple backgrounds"
+    result: "Unreadable text, looks broken"
+    fix: "ALL text on purple must be white. Check h1, p, buttons, links"
+
+  - mistake: "Navbar on separate line from logo"
+    result: "Looks like different site, inconsistent"
+    fix: "Logo and nav must be on SAME LINE using flexbox justify-content: space-between"
+
+# ==============================================================================
+# PRE-COMMIT CHECKLIST
+# ==============================================================================
+pre_commit_checklist:
+  navbar:
+    - "[ ] Navbar has purple gradient background"
+    - "[ ] Logo text is WHITE"
+    - "[ ] Nav links are WHITE"
+    - "[ ] Logo and nav are on SAME LINE"
+    - "[ ] Uses nav-dropdown (not dropdown)"
+    - "[ ] No <header> wrapper on info pages"
+    - "[ ] Book Now button is btn-primary"
+
+  hero:
+    - "[ ] H1 text is WHITE"
+    - "[ ] Subtitle/p text is WHITE"
+    - "[ ] Buttons are visible (white text if on purple)"
+
+  buttons_on_purple:
+    - "[ ] btn-primary has white text"
+    - "[ ] btn-secondary has white text/border"
+    - "[ ] btn-outline has white text/border"
+
+  content:
+    - "[ ] Article background is off-white (not pure white)"
+    - "[ ] Cards have borders and subtle shadows"
+    - "[ ] Process steps in white card container"
+
+  dates_and_formatting:
+    - "[ ] All dates use consistent format (e.g., 1347 CE)"
+    - "[ ] No mixed formats (1300s vs CE)"
 
 # ==============================================================================
 # CSS FILE STRUCTURE

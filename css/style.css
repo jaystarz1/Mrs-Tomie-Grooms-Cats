@@ -317,22 +317,19 @@ section {
 /* =====================================================
    Header & Navigation
    ===================================================== */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+
+/* Standard navbar - purple background, white text */
+.navbar {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: var(--spacing-sm) 0;
+    position: relative;
     z-index: 1000;
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-base);
 }
 
-.navbar {
+.navbar .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--spacing-sm) 0;
 }
 
 .logo {
@@ -350,7 +347,7 @@ section {
     font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--primary-dark);
+    color: var(--white);
 }
 
 .nav-menu {
@@ -359,19 +356,44 @@ section {
     gap: var(--spacing-md);
 }
 
+.nav-menu > li > a,
 .nav-menu a {
-    color: var(--gray-600);
+    color: var(--white);
     font-weight: 500;
     transition: color var(--transition-fast);
 }
 
 .nav-menu a:hover {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .nav-menu a.active {
-    color: var(--primary);
+    color: var(--accent);
     font-weight: 600;
+}
+
+/* Header wrapper - for fixed positioning on index page */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: all var(--transition-base);
+}
+
+.header .navbar {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+/* Scrolled state - more solid */
+.header.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+.header.scrolled .navbar {
+    background: var(--primary-dark);
 }
 
 /* Dropdown Menu */
@@ -388,7 +410,7 @@ section {
 
 .nav-dropdown-toggle::after {
     content: "";
-    border: solid var(--gray-600);
+    border: solid var(--white);
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
