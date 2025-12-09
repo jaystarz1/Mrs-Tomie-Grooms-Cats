@@ -252,6 +252,22 @@
     </script>
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-banner" style="display: none;">
+        <div class="container">
+            <div class="cookie-content">
+                <p>We use cookies to improve your experience. By continuing to visit this site you agree to our use of cookies. <a href="privacy.html">Learn more</a></p>
+                <div class="cookie-buttons">
+                    <button onclick="acceptCookies()" class="btn btn-primary btn-sm">Accept</button>
+                    <button onclick="declineCookies()" class="btn btn-outline btn-sm">Decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -279,6 +295,7 @@
     </header>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="container">
@@ -805,6 +822,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -839,7 +857,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Mrs. Tomei Grooms Cats. All rights reserved.</p>
+                <p>&copy; 2024 Mrs. Tomei Grooms Cats. All rights reserved. | <a href="privacy.html" style="color: var(--gray-400);">Privacy Policy</a></p>
             </div>
         </div>
     </footer>

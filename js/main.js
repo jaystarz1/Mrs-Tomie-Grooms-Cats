@@ -109,6 +109,16 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
+    // Cookie Consent functionality
+    function checkCookieConsent() {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
+            document.getElementById('cookie-consent').style.display = 'block';
+        }
+    }
+
+    checkCookieConsent();
+
     // FAQ Accordion functionality
     const faqQuestions = document.querySelectorAll('.faq-question');
 
@@ -133,3 +143,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+// Cookie consent functions (global scope for onclick handlers)
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookie-consent').style.display = 'none';
+    // Initialize analytics here if needed
+}
+
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    document.getElementById('cookie-consent').style.display = 'none';
+}

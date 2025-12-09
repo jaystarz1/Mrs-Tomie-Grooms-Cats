@@ -1,0 +1,589 @@
+# ============================================
+# MASTER WEBSITE BUILD PROCESS
+# ============================================
+# Template for 30-minute professional website builds
+# Copy this to new projects and customize
+# Version: 1.0
+# Created: 2025-12-09
+# ============================================
+
+meta:
+  version: "1.0"
+  target_build_time: "30 minutes"
+  service_tier: "$300 - Up to 3 pages"
+  output_quality: "Professional, SEO-optimized, accessible, compliant"
+
+# ============================================
+# PHASE 0: PROJECT SETUP (2 minutes)
+# ============================================
+phase_0_setup:
+  duration: "2 minutes"
+
+  tasks:
+    - task: "Create project folder"
+      command: "mkdir -p {project-name} && cd {project-name}"
+
+    - task: "Initialize git"
+      command: "git init"
+
+    - task: "Copy this template"
+      files:
+        - "MASTER-BUILD-PROCESS.yaml → PROJECT-BUILD.yaml"
+        - "style_guide_template.yaml → style_guide.yaml"
+
+    - task: "Create folder structure"
+      structure:
+        - "index.html"
+        - "css/style.css"
+        - "js/main.js"
+        - "images/"
+        - "CLAUDE.md"
+
+# ============================================
+# PHASE 1: DISCOVERY (5 minutes)
+# ============================================
+phase_1_discovery:
+  duration: "5 minutes"
+
+  checklist:
+    client_assets:
+      - item: "Existing website URL"
+        action: "Analyze structure, content, what's missing"
+      - item: "Social media profiles"
+        action: "Facebook, Instagram - extract images, verify info"
+      - item: "Business info (NAP)"
+        action: "Name, Address (if public), Phone"
+      - item: "Services and pricing"
+        action: "Document all services with prices"
+      - item: "Credentials/certifications"
+        action: "Key differentiators to highlight"
+      - item: "Brand colors"
+        action: "Get from existing site or ask client"
+
+    competitor_research:
+      - item: "Search '[industry] [location]'"
+        action: "Note top 3 competitors"
+      - item: "Identify standard sections"
+        action: "What do ALL competitors have?"
+      - item: "Note differentiators"
+        action: "What makes client unique?"
+
+    outputs:
+      - "style_guide.yaml populated with colors, fonts"
+      - "Business info documented"
+      - "Competitor notes for content ideas"
+
+# ============================================
+# PHASE 2: DESIGN BUILD (10 minutes)
+# ============================================
+phase_2_build:
+  duration: "10 minutes"
+
+  css_approach:
+    recommendation: "Tailwind CSS"
+    reasons:
+      - "No custom CSS maintenance"
+      - "Consistent utility classes"
+      - "Responsive built-in"
+      - "Faster to build"
+      - "Smaller final bundle (purged)"
+
+    tailwind_setup:
+      cdn_quick_start: |
+        <!-- Add to <head> for quick builds -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  primary: '#7B2D8E',      // From style_guide.yaml
+                  'primary-dark': '#4A1259',
+                  'primary-light': '#9B4DB8',
+                  accent: '#D4A84B',
+                }
+              }
+            }
+          }
+        </script>
+
+      production_setup: |
+        # For production builds (when time allows)
+        npm install -D tailwindcss
+        npx tailwindcss init
+        # Configure purge for minimal CSS
+
+    vanilla_css_when:
+      - "Client specifically requests custom CSS"
+      - "Site needs heavy custom animations"
+      - "Maintaining existing CSS codebase"
+
+  standard_sections:
+    single_page:
+      - section: "Header/Navigation"
+        required: true
+        elements: ["Logo", "Nav links", "CTA button", "Mobile menu"]
+
+      - section: "Hero"
+        required: true
+        elements: ["Headline", "Subheadline", "CTA", "Trust badges"]
+
+      - section: "Services"
+        required: true
+        elements: ["Service cards", "Pricing", "Brief descriptions"]
+
+      - section: "About/Credentials"
+        required: true
+        elements: ["Bio", "Credentials", "Photo if available"]
+
+      - section: "Why Choose Us / Benefits"
+        required: true
+        elements: ["4-6 benefit cards", "Icons", "Brief text"]
+
+      - section: "FAQ"
+        required: true
+        elements: ["6-10 questions", "Accordion UI", "Schema markup"]
+
+      - section: "Gallery"
+        required: "if images available"
+        elements: ["Grid of images", "Lightbox optional"]
+
+      - section: "Testimonials"
+        required: "if available"
+        elements: ["Quote cards", "Name/title", "Star ratings"]
+
+      - section: "Locations/Areas Served"
+        required: "for local business"
+        elements: ["Address", "Map embed", "Service areas"]
+
+      - section: "Contact"
+        required: true
+        elements: ["Form", "Phone", "Email", "Hours"]
+
+      - section: "Footer"
+        required: true
+        elements: ["Quick links", "Contact info", "Social links", "Copyright"]
+
+    multi_page_expansion:
+      page_2_options:
+        - "/services.html - Detailed service descriptions"
+        - "/about.html - Full bio and story"
+        - "/faq.html - Expanded FAQ"
+        - "/{location}.html - Location-specific page"
+
+      page_3_options:
+        - "/gallery.html - Full photo gallery"
+        - "/contact.html - Dedicated contact page"
+        - "/blog.html - Simple blog/news"
+        - "/resources.html - Industry resources/directory"
+
+# ============================================
+# PHASE 3: SEO OPTIMIZATION (5 minutes)
+# ============================================
+phase_3_seo:
+  duration: "5 minutes"
+
+  meta_tags_checklist:
+    required:
+      - tag: "title"
+        format: "[Primary Keyword] [Location] | [Brand Name]"
+        example: "Cat Grooming Toronto | CFMG Certified - Mrs. Tomei"
+        max_length: 60
+
+      - tag: "meta description"
+        format: "[What you do] in [location]. [Key benefit]. [CTA with phone]."
+        example: "Professional cat grooming in East York/Toronto. CFMG certified. Call (416) 270-1884."
+        max_length: 160
+
+      - tag: "canonical"
+        format: "Full URL of page"
+
+      - tag: "robots"
+        value: "index, follow"
+
+    open_graph:
+      - "og:title"
+      - "og:description"
+      - "og:type (website or business.business)"
+      - "og:url"
+      - "og:site_name"
+      - "og:locale"
+      - "og:image (if available)"
+
+    geo_tags:
+      - "geo.region (CA-ON)"
+      - "geo.placename"
+      - "geo.position (lat;long)"
+      - "ICBM (lat, long)"
+
+    twitter_cards:
+      - "twitter:card"
+      - "twitter:title"
+      - "twitter:description"
+
+  schema_markup_required:
+    local_business:
+      required_fields:
+        - "@type: LocalBusiness (or more specific)"
+        - "name"
+        - "description"
+        - "url"
+        - "telephone"
+        - "email"
+        - "address (PostalAddress)"
+        - "geo (GeoCoordinates)"
+        - "areaServed (array of City objects)"
+        - "priceRange"
+        - "openingHoursSpecification"
+
+      recommended_fields:
+        - "image"
+        - "sameAs (social profiles)"
+        - "hasOfferCatalog"
+
+    faq_page:
+      note: "CRITICAL for AI/LLM optimization"
+      minimum_questions: 5
+      format: |
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Question text?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Answer text."
+              }
+            }
+          ]
+        }
+
+    service:
+      format: "OfferCatalog with individual Service offers"
+
+    website_and_webpage:
+      note: "Connect everything with @graph and @id references"
+
+  technical_seo:
+    files_required:
+      - file: "sitemap.xml"
+        generator: "Manual or tool"
+
+      - file: "robots.txt"
+        must_include: |
+          User-agent: *
+          Allow: /
+          Sitemap: https://domain.com/sitemap.xml
+
+          # AI Crawlers - Allow
+          User-agent: GPTBot
+          Allow: /
+          User-agent: ClaudeBot
+          Allow: /
+          User-agent: PerplexityBot
+          Allow: /
+
+      - file: "llms.txt"
+        purpose: "AI crawler summary"
+        format: |
+          # LLMs.txt - [Business Name]
+          ## About This Business
+          [1-2 paragraph description]
+          ## Services
+          [List with prices]
+          ## Contact
+          [Phone, email, address]
+          ## Keywords
+          [Comma-separated keywords]
+
+# ============================================
+# PHASE 4: ACCESSIBILITY (3 minutes)
+# ============================================
+phase_4_accessibility:
+  duration: "3 minutes"
+  standard: "WCAG 2.1 AA"
+
+  checklist:
+    structure:
+      - item: "Semantic HTML"
+        check: "Use header, nav, main, section, article, footer"
+
+      - item: "Heading hierarchy"
+        check: "Single H1, logical H2-H6 nesting"
+
+      - item: "Skip link"
+        check: "First focusable element skips to main content"
+        code: |
+          <a href="#main-content" class="sr-only focus:not-sr-only">
+            Skip to main content
+          </a>
+
+      - item: "Landmarks"
+        check: "role attributes where semantic HTML insufficient"
+
+    images:
+      - item: "Alt text"
+        check: "ALL images have descriptive alt text"
+        decorative: "Empty alt='' for decorative images"
+
+      - item: "No text in images"
+        check: "Text should be HTML, not burned into images"
+
+    forms:
+      - item: "Labels"
+        check: "Every input has associated <label>"
+
+      - item: "Error messages"
+        check: "Clear error identification and suggestions"
+
+      - item: "Required fields"
+        check: "aria-required='true' on required inputs"
+
+    color_contrast:
+      - item: "Text contrast"
+        check: "4.5:1 ratio for normal text, 3:1 for large"
+        tool: "https://webaim.org/resources/contrastchecker/"
+
+      - item: "Link distinction"
+        check: "Links distinguishable without color alone"
+
+    keyboard:
+      - item: "Tab order"
+        check: "Logical focus order through page"
+
+      - item: "Focus visible"
+        check: "Clear focus indicators on all interactive elements"
+
+      - item: "No keyboard traps"
+        check: "Can tab out of any component"
+
+    interactive:
+      - item: "Button vs link"
+        check: "Buttons for actions, links for navigation"
+
+      - item: "ARIA labels"
+        check: "aria-label on icon-only buttons"
+
+      - item: "Expandable content"
+        check: "aria-expanded on accordions/dropdowns"
+
+    testing:
+      quick_tests:
+        - "Tab through entire page - logical order?"
+        - "Zoom to 200% - still usable?"
+        - "Screen reader test (VoiceOver/NVDA)"
+        - "Remove CSS - still readable?"
+
+# ============================================
+# PHASE 5: LEGAL COMPLIANCE (3 minutes)
+# ============================================
+phase_5_legal:
+  duration: "3 minutes"
+
+  gdpr_ccpa:
+    applies_when:
+      - "Any EU visitors (GDPR)"
+      - "California visitors (CCPA)"
+      - "Using analytics (Google Analytics)"
+      - "Contact forms collecting data"
+
+    cookie_consent:
+      required: true
+      implementation: |
+        <!-- Cookie Consent Banner -->
+        <div id="cookie-consent" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 hidden">
+          <div class="container mx-auto flex flex-wrap items-center justify-between gap-4">
+            <p class="text-sm">
+              We use cookies to improve your experience. By continuing to visit this site you agree to our use of cookies.
+              <a href="/privacy.html" class="underline">Learn more</a>
+            </p>
+            <div class="flex gap-2">
+              <button onclick="acceptCookies()" class="bg-primary px-4 py-2 rounded text-sm">Accept</button>
+              <button onclick="declineCookies()" class="border border-white px-4 py-2 rounded text-sm">Decline</button>
+            </div>
+          </div>
+        </div>
+
+      javascript: |
+        // Cookie consent logic
+        function checkCookieConsent() {
+          if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-consent').classList.remove('hidden');
+          }
+        }
+
+        function acceptCookies() {
+          localStorage.setItem('cookieConsent', 'accepted');
+          document.getElementById('cookie-consent').classList.add('hidden');
+          // Initialize analytics here
+          loadAnalytics();
+        }
+
+        function declineCookies() {
+          localStorage.setItem('cookieConsent', 'declined');
+          document.getElementById('cookie-consent').classList.add('hidden');
+          // Don't load analytics
+        }
+
+        function loadAnalytics() {
+          // Only load if consent given
+          if (localStorage.getItem('cookieConsent') === 'accepted') {
+            // Google Analytics or other tracking
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', checkCookieConsent);
+
+    privacy_policy:
+      required: true
+      page: "/privacy.html"
+      must_include:
+        - "What data you collect"
+        - "How you use it"
+        - "Third parties (analytics, hosting)"
+        - "User rights (access, deletion)"
+        - "Contact for privacy requests"
+        - "Cookie policy"
+
+      generator_tools:
+        - "https://www.privacypolicygenerator.info/"
+        - "https://www.termsfeed.com/privacy-policy-generator/"
+
+    terms_of_service:
+      required: "recommended"
+      page: "/terms.html"
+
+  canadian_specific:
+    pipeda:
+      note: "Canadian privacy law - similar to GDPR"
+      requirements:
+        - "Consent for data collection"
+        - "Purpose limitation"
+        - "Access rights"
+
+    casl:
+      note: "Anti-spam law"
+      applies_to: "Email marketing"
+      requirements:
+        - "Express consent for marketing emails"
+        - "Unsubscribe mechanism"
+        - "Sender identification"
+
+  accessibility_legal:
+    aoda:
+      applies_to: "Ontario businesses"
+      note: "Accessibility for Ontarians with Disabilities Act"
+      requirement: "WCAG 2.0 Level AA"
+
+    ada:
+      applies_to: "US-facing businesses"
+      note: "Americans with Disabilities Act"
+
+  copyright:
+    footer_required: |
+      &copy; {year} {Business Name}. All rights reserved.
+
+    image_rights:
+      - "Only use images you own or have license for"
+      - "Stock photos must have commercial license"
+      - "Client-provided images - get written permission"
+
+# ============================================
+# PHASE 6: DEPLOYMENT (2 minutes)
+# ============================================
+phase_6_deployment:
+  duration: "2 minutes"
+
+  github_pages:
+    steps:
+      - "git add ."
+      - "git commit -m 'Initial website build'"
+      - "git remote add origin {repo-url}"
+      - "git push -u origin main"
+      - "Enable GitHub Pages in Settings"
+
+    custom_domain:
+      - "Add CNAME file with domain"
+      - "Configure DNS at registrar"
+      - "Wait for SSL provisioning"
+
+  pre_launch_checklist:
+    - "All links work (no 404s)"
+    - "Images all load"
+    - "Mobile responsive check"
+    - "Forms submit correctly"
+    - "Analytics tracking (if consented)"
+    - "Cookie consent works"
+    - "Privacy policy linked"
+    - "Contact info correct"
+
+# ============================================
+# YAML FILES TO CREATE PER PROJECT
+# ============================================
+yaml_files_per_project:
+  required:
+    - file: "style_guide.yaml"
+      purpose: "Brand colors, fonts, design tokens"
+      template: "style_guide_template.yaml"
+
+    - file: "PROJECT-BUILD.yaml"
+      purpose: "Track build progress, tasks, notes"
+      template: "This file (MASTER-BUILD-PROCESS.yaml)"
+
+    - file: "session_log.yaml"
+      purpose: "Cross-session continuity harness"
+      contents:
+        - "Business info"
+        - "Current state"
+        - "Pending tasks"
+        - "Session history"
+
+  optional:
+    - file: "content.yaml"
+      purpose: "All page content in structured format"
+      when: "Multi-page sites or CMS-like content"
+
+    - file: "seo.yaml"
+      purpose: "All meta tags, schema in one place"
+      when: "Complex SEO requirements"
+
+# ============================================
+# QUICK REFERENCE COMMANDS
+# ============================================
+quick_commands:
+  new_project: |
+    mkdir {project-name}
+    cd {project-name}
+    git init
+    # Copy templates from master folder
+
+  tailwind_cdn: |
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  deploy_github: |
+    git add . && git commit -m "Deploy" && git push
+
+  schema_validator: "https://validator.schema.org/"
+  accessibility_checker: "https://wave.webaim.org/"
+  contrast_checker: "https://webaim.org/resources/contrastchecker/"
+
+# ============================================
+# TIME BREAKDOWN SUMMARY
+# ============================================
+time_summary:
+  phase_0_setup: "2 min"
+  phase_1_discovery: "5 min"
+  phase_2_build: "10 min"
+  phase_3_seo: "5 min"
+  phase_4_accessibility: "3 min"
+  phase_5_legal: "3 min"
+  phase_6_deployment: "2 min"
+  total: "30 minutes"
+
+  efficiency_notes:
+    - "Use Tailwind CDN for fastest builds"
+    - "Keep style_guide.yaml handy for quick color reference"
+    - "Copy/paste schema markup templates"
+    - "Use privacy policy generators"
+    - "GitHub Pages = instant free hosting"

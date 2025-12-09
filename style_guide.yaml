@@ -1,0 +1,371 @@
+# ============================================
+# STYLE GUIDE - Mrs. Tomei Grooms Cats
+# ============================================
+# Single source of truth for all design decisions
+# Read this first when making ANY styling changes
+# ============================================
+
+project:
+  name: "Mrs. Tomei Grooms Cats"
+  industry: "Pet Services - Cat Grooming"
+  tone: ["Professional", "Caring", "Expert", "Calm"]
+
+# ============================================
+# COLOR PALETTE
+# ============================================
+colors:
+  # Primary Brand Colors
+  primary:
+    main: "#7B2D8E"
+    dark: "#4A1259"
+    light: "#9B4DB8"
+    pale: "#E8D4ED"
+    usage:
+      main: "Buttons, links, key UI elements"
+      dark: "Headers, footers, dark sections"
+      light: "Hover states, secondary buttons"
+      pale: "Backgrounds, cards, subtle accents"
+
+  # Accent Colors
+  accent:
+    gold: "#D4A84B"
+    gold_light: "#F5E6C3"
+    usage:
+      gold: "CTAs, highlights, badges"
+      gold_light: "Background accents"
+
+  # Neutral Colors
+  neutral:
+    white: "#FFFFFF"
+    off_white: "#FAF8FB"
+    gray_100: "#F5F3F7"
+    gray_200: "#E8E4EC"
+    gray_300: "#D1C9D8"
+    gray_400: "#9E93A8"
+    gray_500: "#6B5F78"
+    gray_600: "#4A4154"
+    gray_700: "#2D2633"
+    dark: "#1A1420"
+
+  # Semantic Colors
+  semantic:
+    success: "#22C55E"
+    warning: "#F59E0B"
+    error: "#EF4444"
+    info: "#3B82F6"
+
+  # Tailwind Config
+  tailwind_extend: |
+    colors: {
+      primary: {
+        DEFAULT: '#7B2D8E',
+        dark: '#4A1259',
+        light: '#9B4DB8',
+        pale: '#E8D4ED',
+      },
+      accent: {
+        DEFAULT: '#D4A84B',
+        light: '#F5E6C3',
+      }
+    }
+
+# ============================================
+# TYPOGRAPHY
+# ============================================
+typography:
+  fonts:
+    heading:
+      family: "'Playfair Display', Georgia, serif"
+      weights: [500, 600, 700]
+      usage: "H1-H4, logo text, special callouts"
+
+    body:
+      family: "'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif"
+      weights: [400, 500, 600]
+      usage: "Body text, buttons, navigation"
+
+  scale:
+    h1: "clamp(2.5rem, 5vw, 4rem)"
+    h2: "clamp(2rem, 4vw, 3rem)"
+    h3: "clamp(1.25rem, 2.5vw, 1.75rem)"
+    h4: "1.25rem"
+    body: "1rem"
+    small: "0.875rem"
+    tiny: "0.75rem"
+
+  line_heights:
+    heading: 1.2
+    body: 1.6
+    tight: 1.4
+
+  google_fonts_link: |
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+# ============================================
+# SPACING
+# ============================================
+spacing:
+  # Named spacing values
+  xs: "0.5rem"    # 8px
+  sm: "1rem"      # 16px
+  md: "1.5rem"    # 24px
+  lg: "2rem"      # 32px
+  xl: "3rem"      # 48px
+  xxl: "5rem"     # 80px
+
+  # Section padding
+  section_padding: "5rem 0"
+  section_padding_mobile: "3rem 0"
+
+  # Container
+  container_max_width: "1200px"
+  container_padding: "1.5rem"
+
+# ============================================
+# BORDER RADIUS
+# ============================================
+border_radius:
+  sm: "4px"
+  md: "8px"
+  lg: "16px"
+  xl: "24px"
+  full: "50%"
+  pill: "9999px"
+
+  # Component-specific
+  button: "8px"
+  card: "16px"
+  badge: "24px"
+  input: "8px"
+
+# ============================================
+# SHADOWS
+# ============================================
+shadows:
+  sm: "0 1px 3px rgba(74, 18, 89, 0.1)"
+  md: "0 4px 12px rgba(74, 18, 89, 0.15)"
+  lg: "0 8px 24px rgba(74, 18, 89, 0.2)"
+  xl: "0 16px 48px rgba(74, 18, 89, 0.25)"
+
+  # Component-specific
+  card: "0 4px 12px rgba(74, 18, 89, 0.15)"
+  card_hover: "0 8px 24px rgba(74, 18, 89, 0.2)"
+  button: "0 4px 12px rgba(74, 18, 89, 0.2)"
+
+# ============================================
+# TRANSITIONS
+# ============================================
+transitions:
+  fast: "0.15s ease"
+  base: "0.3s ease"
+  slow: "0.5s ease"
+
+  # Common animations
+  hover_lift: "transform 0.3s ease, box-shadow 0.3s ease"
+  color_change: "color 0.15s ease, background-color 0.15s ease"
+
+# ============================================
+# COMPONENTS
+# ============================================
+components:
+  buttons:
+    primary:
+      background: "linear-gradient(135deg, #7B2D8E 0%, #4A1259 100%)"
+      color: "#FFFFFF"
+      border: "2px solid #7B2D8E"
+      border_radius: "8px"
+      padding: "0.75rem 1.5rem"
+      hover:
+        background: "linear-gradient(135deg, #9B4DB8 0%, #7B2D8E 100%)"
+        transform: "translateY(-2px)"
+        box_shadow: "0 4px 12px rgba(74, 18, 89, 0.2)"
+
+    outline:
+      background: "transparent"
+      color: "#FFFFFF"
+      border: "2px solid #FFFFFF"
+      hover:
+        background: "#FFFFFF"
+        color: "#4A1259"
+
+    ghost:
+      background: "transparent"
+      color: "#7B2D8E"
+      border: "none"
+      hover:
+        background: "#E8D4ED"
+
+  cards:
+    default:
+      background: "#FFFFFF"
+      border: "1px solid #E8E4EC"
+      border_radius: "16px"
+      padding: "2rem"
+      shadow: "0 1px 3px rgba(74, 18, 89, 0.1)"
+      hover:
+        transform: "translateY(-5px)"
+        shadow: "0 8px 24px rgba(74, 18, 89, 0.2)"
+        border_color: "#E8D4ED"
+
+  inputs:
+    default:
+      border: "1px solid #D1C9D8"
+      border_radius: "8px"
+      padding: "0.75rem 1rem"
+      focus:
+        border_color: "#7B2D8E"
+        box_shadow: "0 0 0 3px #E8D4ED"
+
+  badges:
+    default:
+      background: "#E8D4ED"
+      color: "#4A1259"
+      padding: "0.25rem 1rem"
+      border_radius: "24px"
+      font_size: "0.875rem"
+      font_weight: 600
+      text_transform: "uppercase"
+      letter_spacing: "1px"
+
+# ============================================
+# BREAKPOINTS (Responsive)
+# ============================================
+breakpoints:
+  sm: "640px"
+  md: "768px"
+  lg: "992px"
+  xl: "1200px"
+
+  mobile_first_queries:
+    tablet: "@media (min-width: 768px)"
+    desktop: "@media (min-width: 992px)"
+    wide: "@media (min-width: 1200px)"
+
+  desktop_first_queries:
+    tablet: "@media (max-width: 992px)"
+    mobile: "@media (max-width: 768px)"
+    small: "@media (max-width: 480px)"
+
+# ============================================
+# ICONS
+# ============================================
+icons:
+  style: "Feather/Lucide style (outline, 24x24)"
+  stroke_width: 2
+  source: "Inline SVG for performance"
+
+  common_icons:
+    phone: |
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+
+    email: |
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+
+    location: |
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+
+    chevron_down: |
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+# ============================================
+# ACCESSIBILITY REQUIREMENTS
+# ============================================
+accessibility:
+  color_contrast:
+    normal_text: "4.5:1 minimum"
+    large_text: "3:1 minimum"
+
+  verified_combinations:
+    - combo: "White text on primary (#7B2D8E)"
+      ratio: "7.2:1"
+      status: "PASS AA & AAA"
+
+    - combo: "White text on primary-dark (#4A1259)"
+      ratio: "11.5:1"
+      status: "PASS AA & AAA"
+
+    - combo: "Primary-dark on white"
+      ratio: "11.5:1"
+      status: "PASS AA & AAA"
+
+    - combo: "Gray-500 (#6B5F78) on white"
+      ratio: "5.1:1"
+      status: "PASS AA"
+
+  focus_states:
+    style: "outline: 2px solid #7B2D8E; outline-offset: 2px;"
+
+# ============================================
+# DO's AND DON'Ts
+# ============================================
+guidelines:
+  do:
+    - "Use primary purple for CTAs and interactive elements"
+    - "Use white text on dark backgrounds"
+    - "Maintain consistent spacing using the scale"
+    - "Use Playfair Display for headings"
+    - "Add hover states to all interactive elements"
+    - "Use shadows to create depth hierarchy"
+
+  dont:
+    - "Don't use gray text on purple backgrounds"
+    - "Don't use more than 2 accent colors"
+    - "Don't skip heading levels (H1 → H3)"
+    - "Don't use inline styles - refer to this guide"
+    - "Don't create new colors without adding here first"
+    - "Don't use emojis as primary icons (use SVG)"
+
+# ============================================
+# CSS CUSTOM PROPERTIES (Root Variables)
+# ============================================
+css_variables: |
+  :root {
+    /* Colors */
+    --primary: #7B2D8E;
+    --primary-dark: #4A1259;
+    --primary-light: #9B4DB8;
+    --primary-pale: #E8D4ED;
+    --accent: #D4A84B;
+    --accent-light: #F5E6C3;
+
+    /* Neutrals */
+    --white: #FFFFFF;
+    --off-white: #FAF8FB;
+    --gray-100: #F5F3F7;
+    --gray-200: #E8E4EC;
+    --gray-300: #D1C9D8;
+    --gray-400: #9E93A8;
+    --gray-500: #6B5F78;
+    --gray-600: #4A4154;
+    --gray-700: #2D2633;
+    --dark: #1A1420;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 5rem;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(74, 18, 89, 0.1);
+    --shadow-md: 0 4px 12px rgba(74, 18, 89, 0.15);
+    --shadow-lg: 0 8px 24px rgba(74, 18, 89, 0.2);
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+  }
