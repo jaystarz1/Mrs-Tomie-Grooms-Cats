@@ -1,0 +1,436 @@
+# Mrs. Tomei Grooms Cats - Site Style Canon
+# ==============================================================================
+# SINGLE SOURCE OF TRUTH for all style decisions
+#
+# Rules:
+#   is:     This MUST be true - always comply
+#   is_not: This MUST NEVER happen - always avoid
+#
+# Before making ANY style changes, check this file first!
+# ==============================================================================
+
+brand:
+  name: "Mrs. Tomei Grooms Cats"
+  tagline: "Professional CFMG Certified Cat Grooming"
+  logo_icon: "🐱"
+  service_areas:
+    - Toronto (East York, GTA)
+    - Windsor (Essex County)
+
+# ==============================================================================
+# COLOR PALETTE
+# ==============================================================================
+colors:
+  primary:
+    is: "#7B2D8E"  # Main purple - used for brand, headers, buttons
+    usage: "Primary brand color, nav background, CTA buttons"
+
+  primary_dark:
+    is: "#4A1259"  # Dark purple
+    usage: "Gradients, hover states, footer"
+
+  primary_light:
+    is: "#9B4DB8"  # Light purple
+    usage: "Hover states, accents"
+
+  primary_pale:
+    is: "#E8D4ED"  # Very light purple
+    usage: "Light backgrounds, highlights"
+
+  accent:
+    is: "#D4A84B"  # Gold accent
+    usage: "Special highlights, icons, premium feel"
+
+  accent_light:
+    is: "#F5E6C3"  # Light gold
+    usage: "Subtle accents"
+
+  white:
+    is: "#FFFFFF"
+    usage: "Main backgrounds, button text on purple"
+
+  text_on_purple:
+    is: white
+    is_not: gray
+    is_not: dark text
+    note: "Any element on purple background MUST have white text"
+
+  text_on_white:
+    is: "#4A4154"  # gray-600
+    is_not: white
+    is_not: light gray
+    note: "Any element on white/light background MUST have dark text"
+
+# ==============================================================================
+# TYPOGRAPHY
+# ==============================================================================
+typography:
+  heading_font:
+    is: "'Playfair Display', Georgia, serif"
+    weights: [400, 600, 700]
+
+  body_font:
+    is: "'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif"
+    weights: [400, 500, 600]
+
+  font_imports:
+    is: |
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+# ==============================================================================
+# NAVBAR - CRITICAL COMPONENT
+# ==============================================================================
+navbar:
+  container_class:
+    is: "navbar"
+    is_not: "nav"
+    is_not: "navigation"
+
+  structure:
+    is: |
+      <nav class="navbar">
+        <div class="container">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">🐱</span>
+            <span class="logo-text">Mrs. Tomei Grooms Cats</span>
+          </a>
+          <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+          <ul class="nav-menu">
+            <!-- Nav items here -->
+          </ul>
+        </div>
+      </nav>
+
+  logo:
+    wrapper_element: "a"
+    href: "index.html"
+    class: "logo"
+    icon_class: "logo-icon"
+    text_class: "logo-text"
+    is_not: div wrapper
+    is_not: span wrapper
+
+  menu:
+    container_class:
+      is: "nav-menu"
+      is_not: "menu"
+      is_not: "navigation-menu"
+
+    item_structure:
+      is: "<li><a href='#'>Link Text</a></li>"
+
+  dropdown:
+    wrapper_class:
+      is: "nav-dropdown"
+      is_not: "dropdown"          # WRONG - causes display issues
+      is_not: "menu-dropdown"
+
+    toggle_class:
+      is: "nav-dropdown-toggle"
+      is_not: "dropdown-toggle"   # WRONG - no matching CSS
+
+    menu_class:
+      is: "nav-dropdown-menu"
+      is_not: "dropdown-menu"     # WRONG - no matching CSS
+
+    arrow_indicator:
+      is: "CSS pseudo-element (::after)"
+      is_not: "<span class='dropdown-arrow'>▼</span>"  # WRONG - inconsistent
+
+    correct_structure:
+      is: |
+        <li class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Menu Label</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="page.html">Item 1</a></li>
+            <li><a href="page.html">Item 2</a></li>
+          </ul>
+        </li>
+
+    wrong_structure:
+      is_not: |
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Menu Label <span class="dropdown-arrow">▼</span></a>
+          <ul class="dropdown-menu">...
+
+  book_now_button:
+    is: '<li><a href="index.html#contact" class="btn btn-primary">Book Now</a></li>'
+    is_not: btn-secondary in nav
+
+  nav_items_order:
+    is:
+      - Home
+      - Services dropdown (All Services, Pricing)
+      - Locations dropdown (Toronto, Windsor)
+      - Cat Wiki dropdown (History of Cats, CFMG Certification, The Lion Cut)
+      - Resources dropdown (Toronto Cat Resources, Windsor Cat Resources)
+      - FAQ
+      - Book Now (button)
+
+# ==============================================================================
+# BUTTONS
+# ==============================================================================
+buttons:
+  base_class:
+    is: "btn"
+    shared_styles: |
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+  btn_primary:
+    class: "btn btn-primary"
+    background: "linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)"
+    text_color:
+      is: white
+      is_not: gray
+      is_not: dark
+    border_color: "var(--primary)"
+    usage: "Main CTAs, booking buttons, primary actions"
+    valid_on_backgrounds: [white, light gray, accent backgrounds]
+
+  btn_outline:
+    class: "btn btn-outline"
+    background: "transparent"
+    text_color:
+      is: white
+    border_color: white
+    usage: "Secondary actions on DARK backgrounds (purple, gradients)"
+    valid_on_backgrounds: [purple, dark, gradients]
+    is_not: "for use on white/light backgrounds"
+
+  btn_outline_dark:
+    class: "btn btn-outline-dark"
+    background: "transparent"
+    text_color:
+      is: "var(--primary)"  # Purple text
+    border_color: "var(--primary)"
+    usage: "Secondary actions on LIGHT backgrounds (white, gray)"
+    valid_on_backgrounds: [white, light gray, pale colors]
+    is_not: "for use on purple/dark backgrounds"
+
+  btn_secondary:
+    class: "btn btn-secondary"
+    must_define_for_purple_backgrounds:
+      is: |
+        .final-cta .btn-secondary,
+        .btn-secondary.on-purple {
+          background: transparent;
+          color: white;
+          border: 2px solid white;
+        }
+        .final-cta .btn-secondary:hover,
+        .btn-secondary.on-purple:hover {
+          background: white;
+          color: var(--primary-dark);
+        }
+    usage: "Alternative CTA on dark backgrounds"
+    warning: "MUST have white text/border on purple backgrounds"
+
+  button_on_purple_rule:
+    is: "White text, white or transparent background"
+    is_not: "Gray text"
+    is_not: "Dark text"
+    is_not: "Purple text on purple background"
+    affected_containers:
+      - ".final-cta"
+      - ".hero" (if purple)
+      - "footer"
+      - any element with purple/dark background
+
+# ==============================================================================
+# CTA SECTIONS
+# ==============================================================================
+cta_sections:
+  inline_cta:
+    background:
+      is: "var(--gray-100)"  # Light gray
+      is_not: purple
+    text_color: dark
+    button_style: "btn-primary or btn-outline-dark"
+
+  final_cta:
+    background:
+      is: "linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)"
+    text_color:
+      is: white
+      is_not: dark
+    button_styles:
+      primary_option: "btn-primary (works - purple on purple with gradient)"
+      secondary_option:
+        is: "btn-outline (white border, white text)"
+        is_not: "btn-secondary without white text override"
+        is_not: "btn-outline-dark (would be invisible)"
+
+# ==============================================================================
+# PAGE HERO SECTIONS
+# ==============================================================================
+hero_sections:
+  class: "page-hero"
+  min_height: "350px"
+
+  with_image:
+    structure: |
+      <section class="page-hero" style="background: linear-gradient(135deg, rgba(212, 168, 75, 0.85) 0%, rgba(170, 120, 40, 0.85) 100%), url('images/YOUR-IMAGE.jpg') center/cover no-repeat; min-height: 350px; display: flex; align-items: center;">
+    text_color: white (with text-shadow for readability)
+
+  without_image:
+    background: "var(--primary-pale) or gradient"
+
+# ==============================================================================
+# FOOTER
+# ==============================================================================
+footer:
+  class: "footer"
+  background: "var(--gray-700)"
+  text_color: white/light
+  link_color: "var(--accent)" on hover
+
+  structure:
+    is: |
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <!-- 4 sections: About, Toronto, Windsor, Quick Links -->
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2024 Mrs. Tomei Grooms Cats. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+# ==============================================================================
+# PAGE TYPES
+# ==============================================================================
+page_types:
+  main_pages:
+    includes: [index.html]
+    has_navbar: true
+    has_footer: true
+    navbar_structure: "homepage with anchor links (#services, #about, #faq)"
+
+  info_pages:
+    includes:
+      - history-of-cats.html
+      - cfmg-certification.html
+      - lion-cut-history.html
+      - cat-grooming-toronto.html
+      - cat-grooming-windsor.html
+    has_navbar: true
+    has_footer: true
+    has_hero: true
+    has_breadcrumb: true
+    navbar_structure: "links to index.html sections and other pages"
+    navbar_links:
+      is: "Use index.html#section for main page sections"
+      is_not: "Use #section (will 404 on info pages)"
+
+  resource_pages:
+    includes:
+      - cat-resources-toronto.html
+      - cat-resources-windsor.html
+    has_navbar: true
+    has_footer: true
+
+# ==============================================================================
+# COMMON MISTAKES TO AVOID
+# ==============================================================================
+common_mistakes:
+  - mistake: "Using .dropdown instead of .nav-dropdown"
+    result: "Dropdowns don't style properly, appear expanded"
+    fix: "Always use nav-dropdown, nav-dropdown-toggle, nav-dropdown-menu"
+
+  - mistake: "Using btn-secondary on purple without white text override"
+    result: "Gray/invisible text on purple background"
+    fix: "Use btn-outline OR add CSS for .final-cta .btn-secondary"
+
+  - mistake: "Using <span class='dropdown-arrow'>▼</span> in nav"
+    result: "Inconsistent arrow styling"
+    fix: "Use CSS ::after pseudo-element (already in nav-dropdown-toggle)"
+
+  - mistake: "Wrapping logo in div instead of anchor"
+    result: "Logo not clickable"
+    fix: "Use <a href='index.html' class='logo'>"
+
+  - mistake: "Using #section links on info pages"
+    result: "404 errors or no navigation"
+    fix: "Use index.html#section for main page sections"
+
+# ==============================================================================
+# CSS FILE STRUCTURE
+# ==============================================================================
+css_structure:
+  main_file: "css/style.css"
+
+  organization:
+    - "CSS Variables (:root)"
+    - "Reset & Base Styles"
+    - "Typography"
+    - "Layout (Container)"
+    - "Buttons"
+    - "Navbar & Dropdowns"
+    - "Hero Sections"
+    - "Service Cards"
+    - "Footer"
+    - "Article/Info Page Styles"
+    - "Responsive Breakpoints"
+
+# ==============================================================================
+# REQUIRED CSS ADDITIONS
+# ==============================================================================
+required_css_fixes:
+  btn_secondary_on_purple:
+    status: MISSING
+    required: |
+      /* Secondary button for purple/dark backgrounds */
+      .btn-secondary {
+        background: transparent;
+        color: var(--gray-600);
+        border: 2px solid var(--gray-300);
+      }
+
+      .btn-secondary:hover {
+        background: var(--gray-100);
+        border-color: var(--gray-400);
+      }
+
+      /* Override for purple backgrounds */
+      .final-cta .btn-secondary,
+      .hero .btn-secondary,
+      .on-dark .btn-secondary {
+        color: white;
+        border-color: white;
+      }
+
+      .final-cta .btn-secondary:hover,
+      .hero .btn-secondary:hover,
+      .on-dark .btn-secondary:hover {
+        background: white;
+        color: var(--primary-dark);
+      }
+
+# ==============================================================================
+# CHECKLIST FOR NEW PAGES
+# ==============================================================================
+new_page_checklist:
+  - "[ ] Copy navbar from this canon (nav-dropdown structure)"
+  - "[ ] Verify all dropdown classes are nav-dropdown-*"
+  - "[ ] Check button colors match background context"
+  - "[ ] Include proper font imports"
+  - "[ ] Link to css/style.css"
+  - "[ ] Add mobile menu button and script"
+  - "[ ] Use index.html#section for main page links"
+  - "[ ] Include proper footer"
+  - "[ ] Test on mobile view"
+
+# Last Updated: 2025-12-09
+# Reason: Created after navbar/button inconsistencies on lion-cut-history.html

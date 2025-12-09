@@ -233,7 +233,7 @@ section {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: var(--white);
+    color: #FFFFFF !important;
     border-color: var(--primary);
 }
 
@@ -266,6 +266,39 @@ section {
 .btn-outline-dark:hover {
     background: var(--primary);
     color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Secondary button - for light backgrounds */
+.btn-secondary {
+    background: transparent;
+    color: var(--gray-600);
+    border: 2px solid var(--gray-300);
+}
+
+.btn-secondary:hover {
+    background: var(--gray-100);
+    border-color: var(--gray-400);
+    transform: translateY(-2px);
+}
+
+/* Secondary button override for dark/purple backgrounds */
+.final-cta .btn-secondary,
+.hero .btn-secondary,
+.on-dark .btn-secondary,
+.btn-secondary.on-purple {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.final-cta .btn-secondary:hover,
+.hero .btn-secondary:hover,
+.on-dark .btn-secondary:hover,
+.btn-secondary.on-purple:hover {
+    background: var(--white);
+    color: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
