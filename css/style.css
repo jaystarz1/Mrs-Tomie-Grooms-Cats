@@ -256,6 +256,20 @@ section {
     color: var(--primary-dark);
 }
 
+/* Outline button variant for light backgrounds */
+.btn-outline-dark {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline-dark:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 .btn-lg {
     padding: 1rem 2rem;
     font-size: 1.125rem;
