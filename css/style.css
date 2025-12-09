@@ -583,13 +583,18 @@ section {
 }
 
 .benefit h3 {
-    color: var(--white);
+    color: #FFFFFF;
     margin-bottom: var(--spacing-sm);
 }
 
 .benefit p {
-    color: var(--white);
+    color: #FFFFFF;
     margin: 0;
+}
+
+.why-us .benefit h3,
+.why-us .benefit p {
+    color: #FFFFFF;
 }
 
 /* =====================================================
