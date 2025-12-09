@@ -320,6 +320,86 @@ section {
     color: var(--primary);
 }
 
+.nav-menu a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Dropdown Menu */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.nav-dropdown-toggle::after {
+    content: "";
+    border: solid var(--gray-600);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform var(--transition-fast);
+}
+
+.nav-dropdown:hover .nav-dropdown-toggle::after {
+    transform: rotate(-135deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    min-width: 180px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-xs) 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    z-index: 100;
+    margin-top: 10px;
+}
+
+.nav-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-bottom-color: var(--white);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 5px;
+}
+
+.nav-dropdown-menu li {
+    padding: 0;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--gray-600);
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+    background: var(--gray-100);
+    color: var(--primary);
+}
+
 /* Fix: Book Now button in nav needs white text */
 .nav-menu .btn-primary,
 .nav-menu .btn-primary:hover {
@@ -1186,6 +1266,49 @@ section {
 
     .nav-toggle {
         display: flex;
+    }
+
+    /* Mobile Dropdown */
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .nav-dropdown-toggle {
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: var(--gray-100);
+        border-radius: var(--radius-md);
+        margin-top: var(--spacing-xs);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
+        transition: max-height var(--transition-base), padding var(--transition-base);
+    }
+
+    .nav-dropdown-menu::before {
+        display: none;
+    }
+
+    .nav-dropdown.active .nav-dropdown-menu {
+        max-height: 200px;
+        padding: var(--spacing-xs) 0;
+    }
+
+    .nav-dropdown.active .nav-dropdown-toggle::after {
+        transform: rotate(-135deg);
+    }
+
+    .nav-dropdown-menu a {
+        text-align: center;
     }
 
     .hero-features {

@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.toggle('active');
         });
 
-        // Close menu when clicking a link
-        const navLinks = navMenu.querySelectorAll('a');
+        // Close menu when clicking a link (but not dropdown toggles)
+        const navLinks = navMenu.querySelectorAll('a:not(.nav-dropdown-toggle)');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
@@ -23,6 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Mobile Dropdown Toggle
+    const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const dropdown = this.parentElement;
+
+            // On mobile, toggle the dropdown
+            if (window.innerWidth <= 768) {
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
