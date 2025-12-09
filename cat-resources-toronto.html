@@ -89,7 +89,7 @@
         /* Resource Page Specific Styles */
         .resource-hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 120px 0 80px;
+            padding: 60px 0;
             text-align: center;
             color: white;
         }
@@ -300,37 +300,49 @@
     <!-- Skip Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header -->
-    <header class="header">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon">🐱</span>
-                    <span class="logo-text">Mrs. Tomei Grooms Cats</span>
-                </a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#locations">Locations</a></li>
-                    <li class="nav-dropdown">
-                        <a href="#" class="nav-dropdown-toggle active">Cat Resources</a>
-                        <ul class="nav-dropdown-menu">
-                            <li><a href="windsor-cat-resources.html">Windsor</a></li>
-                            <li><a href="east-york-cat-resources.html" class="active">East York / Toronto</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="index.html#contact" class="btn btn-primary">Book Now</a></li>
-                </ul>
-            </nav>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🐱</span>
+                <span class="logo-text">Mrs. Tomei Grooms Cats</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">Locations</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="cat-grooming-toronto.html">Cat Grooming Toronto</a></li>
+                        <li><a href="cat-grooming-windsor.html">Cat Grooming Windsor</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">Cat Wiki</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="history-of-cats.html">History of Cats</a></li>
+                        <li><a href="cfmg-certification.html">CFMG Certification</a></li>
+                        <li><a href="lion-cut-history.html">The Lion Cut</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle active">Resources</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="cat-resources-toronto.html" class="active">Toronto Cat Resources</a></li>
+                        <li><a href="cat-resources-windsor.html">Windsor Cat Resources</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#contact" class="btn btn-primary">Book Now</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <main id="main-content">
         <!-- Hero Section -->
