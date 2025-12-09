@@ -252,7 +252,7 @@ section {
 }
 
 .btn-outline:hover {
-    background: var(--white);
+    background: var(--primary-pale);
     color: var(--primary-dark);
 }
 
@@ -299,7 +299,7 @@ section {
 .page-hero .btn-secondary:hover,
 .on-dark .btn-secondary:hover,
 .btn-secondary.on-purple:hover {
-    background: var(--white);
+    background: var(--primary-pale);
     color: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
@@ -431,7 +431,7 @@ section {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--white);
+    background: var(--primary-pale);
     min-width: 180px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
@@ -496,7 +496,7 @@ section {
 .mobile-menu-btn span {
     width: 25px;
     height: 3px;
-    background: var(--white);
+    background: var(--primary-pale);
     border-radius: 2px;
     transition: all var(--transition-fast);
 }
@@ -626,7 +626,7 @@ section {
    Services Section
    ===================================================== */
 .services {
-    background: var(--off-white);
+    background: var(--primary-pale);
 }
 
 .services-grid {
@@ -636,7 +636,7 @@ section {
 }
 
 .service-card {
-    background: var(--white);
+    background: var(--primary-pale);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
@@ -843,7 +843,7 @@ section {
    FAQ Section
    ===================================================== */
 .faq {
-    background: var(--white);
+    background: var(--primary-pale);
 }
 
 .faq-grid {
@@ -855,7 +855,7 @@ section {
 }
 
 .faq-item {
-    background: var(--white);
+    background: var(--primary-pale);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-md);
     overflow: hidden;
@@ -931,7 +931,7 @@ section {
    Gallery Section
    ===================================================== */
 .gallery {
-    background: var(--off-white);
+    background: var(--primary-pale);
 }
 
 .gallery-grid {
@@ -993,7 +993,7 @@ section {
 }
 
 .location-card {
-    background: var(--white);
+    background: var(--primary-pale);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -1117,7 +1117,7 @@ section {
    Contact Section
    ===================================================== */
 .contact {
-    background: var(--off-white);
+    background: var(--primary-pale);
 }
 
 .contact-grid {
@@ -1188,7 +1188,7 @@ section {
 
 /* Contact Form */
 .contact-form-wrapper {
-    background: var(--white);
+    background: var(--primary-pale);
     padding: var(--spacing-xl);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
@@ -1561,12 +1561,12 @@ section {
 /* Article Content Layout */
 .article-content {
     padding: var(--spacing-xl) 0 var(--spacing-xxl);
-    background: var(--off-white); /* Subtle background instead of pure white */
+    background: var(--primary-pale); /* Subtle background instead of pure white */
 }
 
 /* Alternating section backgrounds for visual interest */
 .main-article section:nth-child(even) {
-    background: var(--white);
+    background: var(--primary-pale);
     padding: var(--spacing-lg);
     border-radius: var(--radius-md);
     margin-left: calc(-1 * var(--spacing-lg));
@@ -1599,7 +1599,7 @@ section {
 }
 
 .toc-container {
-    background: var(--white);
+    background: var(--primary-pale);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
     border: 1px solid var(--gray-200);
@@ -1785,7 +1785,7 @@ section {
 
 .neighborhood-card,
 .variation-card {
-    background: var(--white);
+    background: var(--primary-pale);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
@@ -1818,7 +1818,7 @@ section {
 }
 
 .comparison-card {
-    background: var(--white);
+    background: var(--primary-pale);
     border: 2px solid var(--gray-200);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
@@ -1902,7 +1902,7 @@ section {
     display: grid;
     gap: var(--spacing-md);
     margin: var(--spacing-md) 0;
-    background: var(--white);
+    background: var(--primary-pale);
     padding: var(--spacing-lg);
     border-radius: var(--radius-md);
     border: 1px solid var(--gray-200);
@@ -2013,7 +2013,7 @@ section {
 }
 
 .booking-option {
-    background: var(--white);
+    background: var(--primary-pale);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
@@ -2036,7 +2036,7 @@ section {
 }
 
 .testimonial {
-    background: var(--white);
+    background: var(--primary-pale);
     border-left: 4px solid var(--primary);
     padding: var(--spacing-md);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
@@ -2117,7 +2117,7 @@ section {
 }
 
 .cert-level {
-    background: var(--white);
+    background: var(--primary-pale);
     border: 2px solid var(--gray-200);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
