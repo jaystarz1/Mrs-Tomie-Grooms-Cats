@@ -4,8 +4,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Mobile Navigation Toggle
-    const navToggle = document.querySelector('.nav-toggle');
+    // Mobile Navigation Toggle - support both .nav-toggle and .mobile-menu-btn
+    const navToggle = document.querySelector('.nav-toggle') || document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
 
     if (navToggle && navMenu) {
