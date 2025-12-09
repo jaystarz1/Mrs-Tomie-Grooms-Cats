@@ -242,21 +242,118 @@ phase_5_geo_llmo:
 phase_6_expansion:
   status: planned
 
-  proposed_pages:
+  # Priority 1: CFMG Explanation Page
+  cfmg_page:
+    page: "/cfmg.html"
+    priority: "high"
+    purpose: "Explain CFMG certification in detail - key differentiator"
+    content_outline:
+      - section: "What is CFMG?"
+        content: "Certified Feline Master Groomer definition and history"
+      - section: "Certification Requirements"
+        content: "Written exams, practical tests, hours required"
+      - section: "Why It Matters"
+        content: "Safety, expertise, cat-specific knowledge"
+      - section: "Mrs. Tomei's Journey"
+        content: "Personal story of achieving certification"
+      - section: "FAQ"
+        content: "Common questions about CFMG groomers"
+    schema_types: ["Article", "FAQPage", "EducationalOccupationalCredential"]
+
+  # Priority 2: Local Cat Business Directories
+  directory_pages:
+    toronto:
+      page: "/local-cat-services-toronto.html"
+      priority: "high"
+      purpose: "Resource page for cat owners - builds authority and backlinks"
+      areas_covered: ["East York", "North York", "Scarborough", "Downtown Toronto"]
+      categories:
+        - category: "Cat Groomers"
+          note: "Include competitors - shows confidence, builds trust"
+          research_needed: true
+        - category: "Cat-Specialized Veterinarians"
+          note: "Feline-only or feline-focused practices"
+          research_needed: true
+        - category: "Cat Supply Stores"
+          note: "Specialty cat stores, not big box pet stores"
+          research_needed: true
+        - category: "Cat Cafes"
+          note: "Fun addition, unique to urban areas"
+          research_needed: true
+        - category: "Cat Boarding/Sitting"
+          note: "Cat-only boarding facilities"
+          research_needed: true
+      schema_types: ["ItemList", "LocalBusiness"]
+
+    windsor:
+      page: "/local-cat-services-windsor.html"
+      priority: "high"
+      purpose: "Same concept for Windsor service area"
+      areas_covered: ["Windsor", "Tecumseh", "LaSalle", "Amherstburg"]
+      categories:
+        - category: "Cat Groomers"
+          research_needed: true
+        - category: "Cat-Specialized Veterinarians"
+          research_needed: true
+        - category: "Cat Supply Stores"
+          research_needed: true
+        - category: "Cat Boarding/Sitting"
+          research_needed: true
+      schema_types: ["ItemList", "LocalBusiness"]
+
+  # Priority 3: Content Pages
+  content_pages:
     - page: "/services.html"
-      description: "Detailed service pages with individual schema"
-    - page: "/about.html"
-      description: "Full CFMG credentials and bio"
+      priority: "medium"
+      description: "Detailed service descriptions with before/after photos"
+      schema: "Service, OfferCatalog"
+
     - page: "/gallery.html"
-      description: "Expanded photo gallery"
+      priority: "medium"
+      description: "Expanded photo gallery with categories"
+      schema: "ImageGallery"
+
+    - page: "/about.html"
+      priority: "medium"
+      description: "Full bio and credentials"
+      schema: "Person, EducationalOccupationalCredential"
+
+  # Priority 4: Location Pages
+  location_pages:
     - page: "/toronto.html"
-      description: "Toronto/East York location page"
+      priority: "low"
+      description: "Toronto/East York dedicated location page"
+      schema: "LocalBusiness, Place"
+
     - page: "/windsor.html"
-      description: "Windsor location page"
+      priority: "low"
+      description: "Windsor dedicated location page"
+      schema: "LocalBusiness, Place"
+
     - page: "/contact.html"
-      description: "Dedicated contact page with map"
-    - page: "/faq.html"
-      description: "Frequently asked questions"
+      priority: "low"
+      description: "Dedicated contact page with maps for both locations"
+      schema: "ContactPage"
+
+  # Strategic Benefits
+  expansion_strategy:
+    seo_benefits:
+      - "More indexable pages = more search visibility"
+      - "Location-specific pages rank for local searches"
+      - "Directory pages attract backlinks from listed businesses"
+      - "CFMG page establishes topical authority"
+
+    llmo_benefits:
+      - "More content for AI systems to reference"
+      - "FAQ-rich pages are LLM-friendly"
+      - "Directory pages answer 'where to find' queries"
+      - "Structured data on every page"
+
+    business_benefits:
+      - "Directory pages build community goodwill"
+      - "CFMG page educates potential customers"
+      - "Location pages improve local SEO"
+      - "More entry points to the site"
 
 # ============================================
 # PROCESS NOTES (For Replication)
@@ -289,12 +386,111 @@ replication_notes:
     - "Google Maps (embed)"
 
 # ============================================
+# PHASE 7: PROJECT DOCUMENTATION
+# ============================================
+phase_7_documentation:
+  status: completed
+  started: "2025-12-09"
+  completed: "2025-12-09"
+
+  tasks:
+    - task: "Create CLAUDE.md"
+      status: completed
+      file: "CLAUDE.md"
+      contents: "Project overview, branding guide, quick reference, session workflow"
+
+    - task: "Create session_log.yaml harness"
+      status: completed
+      file: "session_log.yaml"
+      contents: "Branding colors, business info, pending tasks, session history"
+
+    - task: "Verify LLM optimization compliance"
+      status: completed
+      docx_source: "How to Optimize Your Website for AI Search"
+      compliance_checklist:
+        - requirement: "robots.txt for AI crawlers"
+          status: "compliant"
+          implementation: "GPTBot, ClaudeBot, PerplexityBot, Google-Extended allowed"
+        - requirement: "llms.txt standard"
+          status: "compliant"
+          implementation: "Created with business info, services, pricing, keywords"
+        - requirement: "Semantic HTML structure"
+          status: "compliant"
+          implementation: "Proper H1-H3 hierarchy, semantic sections"
+        - requirement: "Schema markup - FAQPage"
+          status: "compliant"
+          implementation: "3 FAQs with questions and answers"
+        - requirement: "Schema markup - LocalBusiness"
+          status: "compliant"
+          implementation: "Full NAP, pricing, areaServed"
+        - requirement: "Schema markup - Service"
+          status: "compliant"
+          implementation: "OfferCatalog with 3 services"
+        - requirement: "Connected schema graph"
+          status: "compliant"
+          implementation: "@graph with @id references"
+        - requirement: "E-E-A-T signals"
+          status: "compliant"
+          implementation: "CFMG certification, real business info"
+        - requirement: "Geographic signals"
+          status: "compliant"
+          implementation: "geo.region, geo.placename, ICBM meta tags"
+        - requirement: "areaServed in schema"
+          status: "compliant"
+          implementation: "Toronto, East York, Windsor, Tecumseh"
+
+# ============================================
+# LLM OPTIMIZATION REFERENCE
+# ============================================
+llm_optimization_reference:
+  source_document: "How to Optimize Your Website for AI Search - Complete Guide"
+  key_concepts:
+    ai_crawler_types:
+      training_crawlers: "Feed foundational models (CCBot, GPTBot training mode)"
+      rag_crawlers: "Real-time retrieval (Perplexity, ChatGPT, Claude in search mode)"
+
+    cape_framework:
+      c: "Content - Clear, structured, authoritative"
+      a: "Authority - E-E-A-T signals, credentials"
+      p: "Performance - Fast loading, accessible"
+      e: "Entity - Connected schema graph"
+
+    implementation_priority:
+      high:
+        - "robots.txt allowing AI bots"
+        - "llms.txt with business summary"
+        - "FAQPage schema (LLMs love Q&A format)"
+        - "LocalBusiness schema with areaServed"
+      medium:
+        - "Connected @graph schema"
+        - "Semantic HTML (H1-H6 hierarchy)"
+        - "Clear content sections"
+      nice_to_have:
+        - "HowTo schema for processes"
+        - "Article schema for blog posts"
+        - "BreadcrumbList for navigation"
+
+# ============================================
 # CHANGELOG
 # ============================================
 changelog:
   - date: "2025-12-09"
+    session: 1
     changes:
       - "Initial site build completed"
       - "Facebook images extracted and added"
       - "Deployed to GitHub Pages"
-      - "Started SEO/GEO optimization phase"
+
+  - date: "2025-12-09"
+    session: 2
+    changes:
+      - "Comprehensive SEO optimization applied"
+      - "Schema.org JSON-LD added (LocalBusiness, Service, FAQPage, WebSite, WebPage)"
+      - "llms.txt created for AI crawlers"
+      - "robots.txt updated with AI bot permissions"
+      - "sitemap.xml created"
+      - "Google Map embedded (East York area)"
+      - "Geographic meta tags added"
+      - "CLAUDE.md created"
+      - "session_log.yaml harness created with branding guide"
+      - "LLM optimization compliance verified against DOCX guide"

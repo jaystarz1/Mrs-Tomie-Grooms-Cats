@@ -1,0 +1,314 @@
+# Session Log - Mrs. Tomei Grooms Cats
+# PRIMARY HARNESS - Read first, update last
+# Based on: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+
+# ============================================
+# PROJECT INFO
+# ============================================
+project:
+  name: "Mrs. Tomei Grooms Cats"
+  client: "Mrs. Tomei"
+  domain_target: "mrstomeigroomscats.ca"
+  staging_url: "https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/"
+  github_repo: "https://github.com/jaystarz1/Mrs-Tomie-Grooms-Cats"
+  industry: "Pet Services - Cat Grooming"
+
+# ============================================
+# BRANDING GUIDE
+# ============================================
+branding:
+  colors:
+    primary: "#7B2D8E"        # Main purple
+    primary_dark: "#4A1259"   # Dark purple (header, footer)
+    primary_light: "#9B4DB8"  # Light purple (hover states)
+    primary_pale: "#E8D4ED"   # Very light purple (backgrounds)
+    accent: "#D4A84B"         # Gold accent (CTAs, highlights)
+    text_dark: "#333333"      # Body text
+    text_light: "#666666"     # Secondary text
+    white: "#FFFFFF"          # Backgrounds, text on dark
+
+  typography:
+    primary_font: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+    heading_weights: [600, 700]
+    body_weight: 400
+
+  visual_identity:
+    logo_style: "Text-based with CFMG badge"
+    credential_badge: "CFMG (Certified Feline Master Groomer)"
+    imagery_source: "Real photos from Facebook page"
+    tone: ["Professional", "Caring", "Expert", "Cat-focused"]
+
+  buttons:
+    primary_cta:
+      background: "linear-gradient(135deg, #7B2D8E, #9B4DB8)"
+      text_color: "white"
+      border_radius: "30px"
+    accent_cta:
+      background: "linear-gradient(135deg, #D4A84B, #E8C66B)"
+      text_color: "#333"
+      border_radius: "30px"
+
+  design_patterns:
+    section_padding: "80px 0"
+    card_border_radius: "15px"
+    shadow_style: "0 10px 30px rgba(0,0,0,0.1)"
+    hover_transform: "translateY(-5px)"
+
+# ============================================
+# BUSINESS INFO (NAP)
+# ============================================
+business_info:
+  name: "Mrs. Tomei Grooms Cats"
+  phone: "(416) 270-1884"
+  email: "bellasalsera@hotmail.com"
+
+  locations:
+    toronto:
+      area: "East York, Toronto, ON"
+      service_areas: ["Toronto", "East York", "Scarborough", "North York"]
+      pricing_tier: "Standard"
+    windsor:
+      area: "Windsor, ON"
+      service_areas: ["Windsor", "Tecumseh", "LaSalle"]
+      pricing_tier: "Reduced"
+
+  services:
+    - name: "Standard Groom"
+      toronto_price: 65
+      windsor_price: 55
+      description: "Full grooming session"
+    - name: "Lion Cut"
+      toronto_price: 85
+      windsor_price: 75
+      description: "Popular summer style"
+    - name: "Nail Trim"
+      toronto_price: 25
+      windsor_price: 25
+      description: "Quick nail maintenance"
+    - name: "Bath & Brush"
+      toronto_price: 55
+      windsor_price: 45
+      description: "Wash and brush out"
+    - name: "Dematting"
+      toronto_price: "45+"
+      windsor_price: "35+"
+      description: "Tangle removal"
+    - name: "Sanitary Trim"
+      toronto_price: 35
+      windsor_price: 30
+      description: "Hygiene trim"
+
+  key_differentiators:
+    - "CFMG (Certified Feline Master Groomer) - highest certification"
+    - "Cat-only specialist (no dogs)"
+    - "Stress-free grooming environment"
+    - "Two locations serving GTA and Windsor areas"
+
+# ============================================
+# CURRENT STATE
+# ============================================
+current_state:
+  last_updated: "2025-12-09"
+  last_session_summary: "Completed SEO/GEO optimization, created CLAUDE.md and session harness"
+
+  site_status:
+    live: true
+    url: "https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/"
+    pages_count: 1
+    structure: "Single-page"
+
+  completed_phases:
+    - phase: "Discovery & Research"
+      status: "completed"
+      date: "2025-12-09"
+    - phase: "Design & Build"
+      status: "completed"
+      date: "2025-12-09"
+    - phase: "Deployment"
+      status: "completed"
+      date: "2025-12-09"
+    - phase: "SEO Optimization"
+      status: "completed"
+      date: "2025-12-09"
+    - phase: "GEO/LLMO Optimization"
+      status: "completed"
+      date: "2025-12-09"
+
+  seo_status:
+    meta_tags: "completed"
+    schema_markup: "completed"
+    llms_txt: "completed"
+    robots_txt: "completed"
+    sitemap: "completed"
+    google_map: "completed"
+
+# ============================================
+# PENDING TASKS
+# ============================================
+pending_tasks:
+  high_priority:
+    - task: "Create CFMG explanation page"
+      description: "Dedicated page explaining CFMG certification and why it matters"
+      page: "/cfmg.html"
+
+    - task: "Create local cat services directory - Toronto"
+      description: "Directory of cat groomers, vets, stores in North York/East York"
+      page: "/local-cat-services-toronto.html"
+
+    - task: "Create local cat services directory - Windsor"
+      description: "Directory of cat groomers, vets, stores in Windsor area"
+      page: "/local-cat-services-windsor.html"
+
+  medium_priority:
+    - task: "Expand to multi-page structure"
+      description: "Break out sections into dedicated pages"
+      pages:
+        - "/services.html"
+        - "/gallery.html"
+        - "/toronto.html"
+        - "/windsor.html"
+        - "/contact.html"
+
+    - task: "Add more gallery images"
+      description: "Source additional grooming photos from client"
+
+  low_priority:
+    - task: "Custom domain setup"
+      description: "Configure mrstomeigroomscats.ca when ready"
+
+    - task: "Google Business Profile"
+      description: "Create/claim GBP listing"
+
+# ============================================
+# MULTI-PAGE EXPANSION PLAN
+# ============================================
+expansion_plan:
+  phase_1_content_pages:
+    - page: "/cfmg.html"
+      purpose: "Explain CFMG certification"
+      content:
+        - "What is CFMG?"
+        - "How to become CFMG certified"
+        - "Why choose a CFMG groomer"
+        - "Mrs. Tomei's certification journey"
+      schema: "Article, FAQPage"
+
+    - page: "/services.html"
+      purpose: "Detailed service descriptions"
+      content:
+        - "Each service with full description"
+        - "Before/after photos"
+        - "Pricing for both locations"
+      schema: "Service, OfferCatalog"
+
+  phase_2_location_pages:
+    - page: "/toronto.html"
+      purpose: "Toronto/East York location focus"
+      content:
+        - "Service area map"
+        - "Toronto-specific pricing"
+        - "Local testimonials"
+      schema: "LocalBusiness, Place"
+
+    - page: "/windsor.html"
+      purpose: "Windsor location focus"
+      content:
+        - "Service area map"
+        - "Windsor-specific pricing"
+        - "Local testimonials"
+      schema: "LocalBusiness, Place"
+
+  phase_3_directory_pages:
+    - page: "/local-cat-services-toronto.html"
+      purpose: "Resource page for cat owners in Toronto"
+      content:
+        - "Cat groomers (competitors listed fairly)"
+        - "Cat-specialized veterinarians"
+        - "Cat supply stores"
+        - "Cat cafes"
+        - "Cat boarding/sitting"
+      schema: "ItemList, LocalBusiness"
+
+    - page: "/local-cat-services-windsor.html"
+      purpose: "Resource page for cat owners in Windsor"
+      content:
+        - "Same categories as Toronto"
+      schema: "ItemList, LocalBusiness"
+
+# ============================================
+# SESSION HISTORY
+# ============================================
+session_history:
+  - date: "2025-12-09"
+    session: 1
+    summary: "Initial website build"
+    actions:
+      - "Analyzed existing Squarespace site"
+      - "Extracted images from Facebook page"
+      - "Built single-page responsive website"
+      - "Applied purple branding"
+      - "Deployed to GitHub Pages"
+    outcome: "Site live at staging URL"
+
+  - date: "2025-12-09"
+    session: 2
+    summary: "SEO and GEO/LLMO optimization"
+    actions:
+      - "Applied comprehensive SEO meta tags"
+      - "Added Schema.org JSON-LD (LocalBusiness, Service, FAQPage, etc.)"
+      - "Created llms.txt for AI crawlers"
+      - "Created robots.txt allowing AI bots"
+      - "Created sitemap.xml"
+      - "Added Google Map embed (proximal location)"
+      - "Created WEBSITE-BUILD-PROCESS.yaml for replication"
+      - "Created CLAUDE.md and session_log.yaml harness"
+    outcome: "Full SEO/GEO optimization complete, harness system in place"
+
+# ============================================
+# KNOWN ISSUES
+# ============================================
+known_issues:
+  - issue: "No contact form backend"
+    severity: "low"
+    notes: "Form is mailto link only - works but not ideal"
+
+  - issue: "Limited gallery images"
+    severity: "low"
+    notes: "Only 5 images from Facebook, need more from client"
+
+# ============================================
+# USER PREFERENCES
+# ============================================
+user_preferences:
+  address_privacy: "Do not publish exact street address"
+  pricing_display: "Show both Toronto and Windsor prices"
+  credential_emphasis: "Always highlight CFMG certification"
+  expansion_approach: "Build directory pages for local cat businesses"
+
+# ============================================
+# TECHNICAL NOTES
+# ============================================
+technical_notes:
+  hosting: "GitHub Pages (free)"
+  deployment: "Auto-deploy on push to main branch"
+  ssl: "Automatic via GitHub Pages"
+  cdn: "GitHub's CDN"
+
+  files:
+    - "index.html - Main page (~800 lines)"
+    - "css/style.css - All styles (~600 lines)"
+    - "images/ - 5 cat grooming photos"
+    - "llms.txt - AI crawler info"
+    - "robots.txt - Bot directives"
+    - "sitemap.xml - Search engine sitemap"
+
+# ============================================
+# CHANGELOG
+# ============================================
+changelog:
+  - date: "2025-12-09"
+    changes:
+      - "Created session_log.yaml harness"
+      - "Created CLAUDE.md project instructions"
+      - "Documented branding guide in YAML"
+      - "Established multi-page expansion plan"
