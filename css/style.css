@@ -2238,4 +2238,21 @@ section {
         width: 100%;
         max-width: 300px;
     }
+
+    /* Section CTA buttons - stack vertically on mobile */
+    .section-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    .section-cta .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .section-cta span {
+        display: none; /* Hide "or" text on mobile */
+    }
 }
