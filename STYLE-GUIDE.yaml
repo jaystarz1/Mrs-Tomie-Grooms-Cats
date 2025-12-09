@@ -1,0 +1,199 @@
+# Mrs. Tomei Grooms Cats - Style Guide
+# =====================================
+# SINGLE SOURCE OF TRUTH for all styling decisions
+# When you change something here, change it EVERYWHERE
+#
+# LESSONS LEARNED (Dec 9, 2025):
+# - Inline styles in HTML files OVERRIDE the CSS file
+# - If you change the CSS and a page doesn't update, CHECK FOR INLINE STYLES
+# - "Change the background" means EVERY PAGE, not just one
+# - Cards = white, Page backgrounds = mauve
+# - Mobile nav is MORE IMPORTANT than desktop - test mobile FIRST
+
+# ===========================================
+# COLOR PALETTE
+# ===========================================
+colors:
+  # Primary purple family
+  primary: "#4A1259"           # Deep purple - main brand color
+  primary_dark: "#3A0F47"      # Darker purple - headings, emphasis
+  primary_light: "#7B2D8E"     # Lighter purple - hover states
+  primary_pale: "#E8D4ED"      # Mauve pink - PAGE BACKGROUNDS (not cards!)
+
+  # Accent colors
+  accent_gold: "#D4A855"       # Gold - CTAs, highlights
+  accent_light: "#FFF8E7"      # Light gold tint
+
+  # Neutrals
+  white: "#FFFFFF"             # CARDS, forms, content boxes
+  off_white: "#F8F9FA"         # NOT USED - use primary_pale instead
+  gray_100: "#F1F1F1"
+  gray_200: "#E5E5E5"
+  gray_500: "#6B7280"
+  gray_600: "#4B5563"
+  gray_700: "#374151"
+
+# ===========================================
+# BACKGROUNDS - THE RULES
+# ===========================================
+backgrounds:
+  page_background:
+    color: primary_pale        # "#E8D4ED" - the mauve pink
+    applies_to:
+      - body
+      - ".services section"
+      - ".faq section"
+      - ".gallery section"
+      - ".contact section"
+      - ".article-content"
+    note: "This is the OVERALL page color. NOT white."
+
+  cards_and_content:
+    color: white               # "#FFFFFF"
+    applies_to:
+      - ".service-card"
+      - ".faq-item"
+      - ".location-card"
+      - ".contact-form-wrapper"
+      - ".article-body"
+      - ".toc-container"
+      - ".highlight-box"
+      - ".variation-card"
+      - ".comparison-card"
+      - ".process-steps"
+      - ".booking-option"
+      - ".testimonial"
+      - ".cert-level"
+    note: "Cards sit ON TOP of the mauve background. They are WHITE."
+
+  hero_sections:
+    style: "Purple gradient with cat image overlay"
+    css: |
+      background:
+        linear-gradient(135deg, rgba(74, 18, 89, 0.88) 0%, rgba(123, 45, 142, 0.88) 100%),
+        url('images/cat-white-fluffy.jpg') center/cover no-repeat;
+
+# ===========================================
+# NAVIGATION
+# ===========================================
+navigation:
+  desktop:
+    background: "Purple gradient with cat image (same as hero)"
+    text_color: white
+    sticky: true
+    z_index: 1000
+
+  mobile:
+    hamburger_button: ".mobile-menu-btn"
+    menu_background: primary   # Solid purple
+    text_color: white
+
+    dropdown_toggles:
+      alignment: center
+      arrow_style: "Unicode ▾ and ▴ (NOT CSS borders)"
+      arrow_spacing: "margin-left: 0.5rem"
+      note: "Arrows must NOT touch the text"
+
+    dropdown_menus:
+      background: "rgba(0, 0, 0, 0.12)"  # Slightly darker than parent
+      text_alignment: center
+      borders: "Subtle on links only, not on li elements"
+
+# ===========================================
+# TYPOGRAPHY
+# ===========================================
+typography:
+  headings:
+    font_family: "'Playfair Display', serif"
+    h1_size: "2.5rem"
+    h2_size: "1.75rem"
+    h3_size: "1.25rem"
+    color: primary_dark
+
+  body:
+    font_family: "'Open Sans', sans-serif"
+    size: "1rem"
+    line_height: 1.6
+    color: gray_700
+
+# ===========================================
+# COMPONENTS
+# ===========================================
+components:
+  cards:
+    background: white
+    border: "1px solid var(--gray-200)"
+    border_radius: "var(--radius-lg)"  # Usually 12px
+    box_shadow: "var(--shadow-sm)"
+    hover_shadow: "var(--shadow-md)"
+
+  buttons:
+    primary:
+      background: accent_gold
+      text: white
+      hover: "Darken slightly"
+    secondary:
+      background: transparent
+      border: "2px solid white"
+      text: white
+
+# ===========================================
+# COMMON MISTAKES TO AVOID
+# ===========================================
+mistakes_to_avoid:
+  - mistake: "Changing CSS but page doesn't update"
+    cause: "Inline styles in HTML override CSS file"
+    fix: "Search HTML file for inline <style> blocks"
+
+  - mistake: "Only one page changed when you wanted all"
+    cause: "Assumed CSS change would propagate"
+    fix: "Check EVERY HTML file for inline overrides"
+
+  - mistake: "White text invisible on white background"
+    cause: "Mobile menu had white bg + white text"
+    fix: "Mobile menu must have purple background"
+
+  - mistake: "Cards same color as background (no contrast)"
+    cause: "Changed ALL backgrounds instead of just page bg"
+    fix: "Page bg = mauve, Cards = white"
+
+  - mistake: "Dropdown arrows touching text"
+    cause: "CSS border-based arrows don't respect spacing"
+    fix: "Use Unicode arrows with margin-left"
+
+# ===========================================
+# FILE LOCATIONS
+# ===========================================
+files:
+  main_css: "css/style.css"
+  cache_bust_pattern: "style.css?v=YYYYMMDD[letter]"
+
+  pages_with_inline_styles:
+    - "history-of-cats.html"    # Has extensive inline styles
+    - "lion-cut-history.html"   # Has inline hero styles
+    - "cfmg-certification.html" # Has inline styles
+    # ALWAYS CHECK THESE when making global changes
+
+# ===========================================
+# CHANGE CHECKLIST
+# ===========================================
+change_checklist:
+  when_changing_backgrounds:
+    - "Update css/style.css"
+    - "Search ALL HTML files for inline background styles"
+    - "Check history-of-cats.html specifically"
+    - "Check lion-cut-history.html specifically"
+    - "Update cache bust version"
+    - "Test on mobile AND desktop"
+
+  when_changing_navigation:
+    - "Test mobile FIRST (most users)"
+    - "Check dropdown visibility"
+    - "Verify text is readable (contrast)"
+    - "Test all dropdown expand/collapse"
+
+  when_adding_new_pages:
+    - "Use css/style.css - NO inline styles for common elements"
+    - "If you must use inline styles, document them here"
+    - "Match the page background to primary_pale"
+    - "Cards should be white"
