@@ -318,12 +318,16 @@ section {
    Header & Navigation
    ===================================================== */
 
-/* Standard navbar - purple background, white text */
+/* Standard navbar - sticky with cat background */
 .navbar {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background:
+        linear-gradient(135deg, rgba(74, 18, 89, 0.92) 0%, rgba(123, 45, 142, 0.92) 100%),
+        url('../images/cat-white-fluffy.jpg') center/cover no-repeat;
     padding: var(--spacing-sm) 0;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .navbar .container {
