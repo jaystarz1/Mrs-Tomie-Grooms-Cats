@@ -320,6 +320,12 @@ section {
     color: var(--primary);
 }
 
+/* Fix: Book Now button in nav needs white text */
+.nav-menu .btn-primary,
+.nav-menu .btn-primary:hover {
+    color: #FFFFFF !important;
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
