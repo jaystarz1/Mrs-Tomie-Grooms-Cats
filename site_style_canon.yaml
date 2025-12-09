@@ -91,6 +91,30 @@ typography:
 # ==============================================================================
 # NAVBAR - CRITICAL COMPONENT
 # ==============================================================================
+# ⚠️ CRITICAL RULE - STRUCTURE MATTERS!
+# The navbar MUST be the outermost element.
+# The container MUST be INSIDE the navbar.
+#
+# ✅ CORRECT:
+#   <nav class="navbar">
+#     <div class="container">
+#       ...
+#     </div>
+#   </nav>
+#
+# ❌ WRONG (breaks layout, causes two-line logo):
+#   <header class="header">
+#     <div class="container">
+#       <nav class="navbar">
+#         ...
+#       </nav>
+#     </div>
+#   </header>
+#
+# WHY: When container is OUTSIDE navbar, the purple gradient only fills
+# the container width (1200px), not full screen. Also breaks flex layout.
+# ==============================================================================
+
 navbar:
   visual_spec:
     background:
