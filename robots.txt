@@ -1,0 +1,30 @@
+# Robots.txt for Mrs. Tomei Grooms Cats
+# https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/
+
+User-agent: *
+Allow: /
+
+# AI Crawlers - Welcome!
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Sitemap location
+Sitemap: https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/sitemap.xml
+
+# LLMs.txt for AI systems
+# See: https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/llms.txt
