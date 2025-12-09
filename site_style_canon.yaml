@@ -47,7 +47,16 @@ colors:
 
   white:
     is: "#FFFFFF"
-    usage: "Main backgrounds, button text on purple"
+    usage: "Cards, content boxes, button text on purple"
+    is_not: "Used for entire page backgrounds - too washed out"
+
+  off_white:
+    is: "#FAF8FB"
+    usage: "Page backgrounds, article content areas - provides subtle contrast"
+
+  gray_100:
+    is: "#F5F3F7"
+    usage: "Section backgrounds, subtle dividers"
 
   text_on_purple:
     is: white
@@ -246,6 +255,46 @@ buttons:
       - ".hero" (if purple)
       - "footer"
       - any element with purple/dark background
+
+# ==============================================================================
+# BACKGROUNDS & VISUAL CONTRAST
+# ==============================================================================
+backgrounds:
+  philosophy:
+    is: "Use layered backgrounds for depth and visual interest"
+    is_not: "Pure white everywhere - looks washed out and cheap"
+
+  page_backgrounds:
+    article_pages:
+      is: "var(--off-white) - subtle warmth, not stark white"
+    main_page:
+      is: "Can use white with colored sections for contrast"
+
+  content_cards:
+    background:
+      is: "var(--white) with subtle border and shadow"
+    border:
+      is: "1px solid var(--gray-200)"
+    shadow:
+      is: "var(--shadow-sm)"
+    examples:
+      - ".toc-container"
+      - ".process-steps"
+      - ".booking-option"
+
+  alternating_sections:
+    purpose: "Visual rhythm to break up long content"
+    even_sections:
+      is: "White card with padding on off-white background"
+    odd_sections:
+      is: "No special background"
+
+  grid_layout_rule:
+    critical: "All grid children MUST have min-width: 0 to prevent blowout"
+    pattern: |
+      .parent-grid > * {
+        min-width: 0;
+      }
 
 # ==============================================================================
 # CTA SECTIONS

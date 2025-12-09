@@ -286,6 +286,7 @@ section {
 /* Secondary button override for dark/purple backgrounds */
 .final-cta .btn-secondary,
 .hero .btn-secondary,
+.page-hero .btn-secondary,
 .on-dark .btn-secondary,
 .btn-secondary.on-purple {
     background: transparent;
@@ -295,6 +296,7 @@ section {
 
 .final-cta .btn-secondary:hover,
 .hero .btn-secondary:hover,
+.page-hero .btn-secondary:hover,
 .on-dark .btn-secondary:hover,
 .btn-secondary.on-purple:hover {
     background: var(--white);
@@ -1464,6 +1466,18 @@ section {
 /* Article Content Layout */
 .article-content {
     padding: var(--spacing-xl) 0 var(--spacing-xxl);
+    background: var(--off-white); /* Subtle background instead of pure white */
+}
+
+/* Alternating section backgrounds for visual interest */
+.main-article section:nth-child(even) {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-left: calc(-1 * var(--spacing-lg));
+    margin-right: calc(-1 * var(--spacing-lg));
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
 }
 
 .content-wrapper {
@@ -1471,6 +1485,10 @@ section {
     grid-template-columns: 250px 1fr;
     gap: var(--spacing-xl);
     align-items: start;
+}
+
+.content-wrapper > * {
+    min-width: 0; /* Prevent grid blowout */
 }
 
 @media (max-width: 900px) {
@@ -1486,9 +1504,11 @@ section {
 }
 
 .toc-container {
-    background: var(--gray-100);
+    background: var(--white);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
 }
 
 .toc-container h3 {
@@ -1787,6 +1807,10 @@ section {
     display: grid;
     gap: var(--spacing-md);
     margin: var(--spacing-md) 0;
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-200);
 }
 
 .step {
@@ -1794,6 +1818,17 @@ section {
     grid-template-columns: 50px 1fr;
     gap: var(--spacing-sm);
     align-items: start;
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.step:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.step > * {
+    min-width: 0; /* Prevent grid blowout */
 }
 
 .step-number {
