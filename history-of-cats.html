@@ -63,22 +63,32 @@
     <style>
         /* Page-specific styles */
         .article-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, rgba(74, 18, 89, 0.85) 0%, rgba(123, 45, 142, 0.85) 100%),
+                        url('images/cat-egyptian-style.jpg') center/cover no-repeat;
             color: var(--white);
             padding: calc(80px + var(--spacing-xxl)) 0 var(--spacing-xxl);
             text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+        }
+
+        .article-hero .container {
+            width: 100%;
         }
 
         .article-hero h1 {
             color: var(--white);
             margin-bottom: var(--spacing-md);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .article-hero .lead {
             font-size: 1.25rem;
-            opacity: 0.9;
+            opacity: 0.95;
             max-width: 700px;
             margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
 
         .article-content {
@@ -88,6 +98,85 @@
         .article-body {
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        /* Article images */
+        .article-image {
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-image figcaption {
+            background: var(--gray-100);
+            padding: var(--spacing-sm) var(--spacing-md);
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .article-image.float-right {
+            float: right;
+            max-width: 350px;
+            margin: 0 0 var(--spacing-md) var(--spacing-md);
+        }
+
+        .article-image.float-left {
+            float: left;
+            max-width: 350px;
+            margin: 0 var(--spacing-md) var(--spacing-md) 0;
+        }
+
+        @media (max-width: 768px) {
+            .article-image.float-right,
+            .article-image.float-left {
+                float: none;
+                max-width: 100%;
+                margin: var(--spacing-md) 0;
+            }
+        }
+
+        /* Section divider with image */
+        .section-divider {
+            margin: var(--spacing-xl) 0;
+            padding: var(--spacing-xl);
+            background: var(--gray-100);
+            border-radius: var(--radius-lg);
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .section-divider img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            flex-shrink: 0;
+        }
+
+        .section-divider-content h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        @media (max-width: 600px) {
+            .section-divider {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section-divider img {
+                width: 150px;
+                height: 150px;
+            }
         }
 
         .article-body h2 {
@@ -341,6 +430,11 @@
 
                     <h2 id="origins">The Origins of Domestic Cats: Where It All Began</h2>
 
+                    <figure class="article-image float-right">
+                        <img src="images/cat-orange-tabby.jpg" alt="Orange tabby cat with striking eyes - similar to the African wildcats that first befriended humans" loading="lazy">
+                        <figcaption>Modern cats descend from African wildcats that lived near early human settlements</figcaption>
+                    </figure>
+
                     <p>The story of domestic cats begins approximately <strong>10,000 years ago</strong> in the Fertile Crescent of the Near East, in the region that is now Turkey, Syria, Iraq, and Iran. This was no accident—it coincided perfectly with the agricultural revolution, one of the most significant turning points in human history.</p>
 
                     <p>When humans began farming and storing grain, they unknowingly created the perfect environment for rodents. Mice and rats flourished around these early grain stores, and wild cats—specifically the African wildcat (<em>Felis silvestris lybica</em>)—took notice. These clever predators moved closer to human settlements to hunt the abundant prey, beginning a relationship that would span millennia.</p>
@@ -353,6 +447,11 @@
                     <p>The earliest evidence of cat domestication comes from a <strong>9,500-year-old grave in Cyprus</strong>, where a human was buried alongside a cat. Since cats are not native to Cyprus, this cat must have been brought to the island by boat, indicating a close bond between human and feline even in prehistoric times.</p>
 
                     <h2 id="ancient-egypt">Cats in Ancient Egypt: Gods Among Mortals</h2>
+
+                    <figure class="article-image">
+                        <img src="images/cat-egyptian-style.jpg" alt="Elegant cat reminiscent of ancient Egyptian cat statues" loading="lazy">
+                        <figcaption>Ancient Egyptians revered cats as sacred animals, often depicting them in art and statuary</figcaption>
+                    </figure>
 
                     <p>No civilization in history revered cats more than ancient Egypt. By around <strong>3000 BCE</strong>, cats had become deeply embedded in Egyptian culture, religion, and daily life. They were valued not only as pest controllers protecting valuable grain stores but as sacred beings worthy of worship.</p>
 
@@ -379,6 +478,11 @@
                     </div>
 
                     <h2 id="world-cultures">Cats Across World Cultures</h2>
+
+                    <figure class="article-image float-left">
+                        <img src="images/cat-blue-eyes.jpg" alt="Beautiful cat with striking blue eyes - cats have been beloved across cultures worldwide" loading="lazy">
+                        <figcaption>Cats have been revered in cultures from Rome to Japan</figcaption>
+                    </figure>
 
                     <h3>Ancient Rome and Greece</h3>
 
@@ -424,6 +528,11 @@
                     </div>
 
                     <h2 id="modern-era">The Modern Era: Cats Reclaim Their Throne</h2>
+
+                    <figure class="article-image float-right">
+                        <img src="images/cat-persian-white.jpg" alt="Elegant Persian cat - a breed developed during the Victorian era" loading="lazy">
+                        <figcaption>Persian cats became highly prized during the Victorian era</figcaption>
+                    </figure>
 
                     <p>The 19th century marked the beginning of cats' modern era. <strong>Queen Victoria</strong> was an avid cat lover, and her affection for felines helped make cat ownership fashionable among the upper classes. The first official <strong>cat show</strong> was held at London's Crystal Palace in <strong>1871</strong>, organized by Harrison Weir, often called the "Father of the Cat Fancy."</p>
 
@@ -508,6 +617,11 @@
 
                     <h2 id="grooming-history">The History of Cat Grooming</h2>
 
+                    <figure class="article-image">
+                        <img src="images/cat-grooming-closeup.jpg" alt="Beautiful cat being groomed - professional cat grooming has evolved significantly over the centuries" loading="lazy">
+                        <figcaption>Professional cat grooming has become a specialized skill, especially for long-haired breeds</figcaption>
+                    </figure>
+
                     <p>While cats have been companions to humans for millennia, professional cat grooming is a relatively modern development. For most of history, cats groomed themselves, with humans providing only basic care.</p>
 
                     <h3>Ancient Grooming Practices</h3>
@@ -540,6 +654,11 @@
                     </ul>
 
                     <h2 id="cats-today">Cats Today: Beloved Companions Worldwide</h2>
+
+                    <figure class="article-image float-right">
+                        <img src="images/cat-sleeping.jpg" alt="Peaceful sleeping cat - cats today enjoy comfortable lives as beloved family members" loading="lazy">
+                        <figcaption>Today's cats enjoy comfortable lives as treasured family members</figcaption>
+                    </figure>
 
                     <p>In the 21st century, cats have firmly established themselves as the world's most popular pet. Consider these remarkable statistics:</p>
 
