@@ -481,7 +481,8 @@ section {
     color: #FFFFFF !important;
 }
 
-.nav-toggle {
+.nav-toggle,
+.mobile-menu-btn {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -491,10 +492,11 @@ section {
     padding: 5px;
 }
 
-.nav-toggle span {
+.nav-toggle span,
+.mobile-menu-btn span {
     width: 25px;
     height: 3px;
-    background: var(--primary-dark);
+    background: var(--white);
     border-radius: 2px;
     transition: all var(--transition-fast);
 }
@@ -507,7 +509,9 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+    background:
+        linear-gradient(135deg, rgba(74, 18, 89, 0.88) 0%, rgba(123, 45, 142, 0.88) 50%, rgba(155, 77, 184, 0.88) 100%),
+        url('../images/cat-white-fluffy.jpg') center/cover no-repeat;
     padding-top: 80px;
     overflow: hidden;
 }
@@ -1339,7 +1343,8 @@ section {
         visibility: visible;
     }
 
-    .nav-toggle {
+    .nav-toggle,
+    .mobile-menu-btn {
         display: flex;
     }
 
