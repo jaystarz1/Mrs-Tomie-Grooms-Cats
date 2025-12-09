@@ -1853,10 +1853,25 @@ section {
 .step {
     display: grid;
     grid-template-columns: 50px 1fr;
-    gap: var(--spacing-sm);
+    grid-template-rows: auto auto;
+    gap: 0 var(--spacing-sm);
     align-items: start;
     padding-bottom: var(--spacing-md);
     border-bottom: 1px solid var(--gray-100);
+}
+
+.step .step-number {
+    grid-row: 1 / -1; /* Span all rows */
+}
+
+.step h4 {
+    grid-column: 2;
+    margin: 0 0 0.25rem;
+}
+
+.step p {
+    grid-column: 2;
+    margin: 0;
 }
 
 .step:last-child {
@@ -1879,14 +1894,6 @@ section {
     justify-content: center;
     font-weight: 700;
     font-size: 1.1rem;
-}
-
-.step h4 {
-    margin: 0 0 0.25rem;
-}
-
-.step p {
-    margin: 0;
 }
 
 /* Inline CTAs */
