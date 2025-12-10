@@ -2,9 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/</loc>
-        <lastmod>2025-12-09</lastmod>
+        <lastmod>2025-12-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/cat-grooming-toronto.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/cat-grooming-windsor.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/history-of-cats.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/cfmg-certification.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/lion-cut-history.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/famous-cats.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/cat-resources-toronto.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/cat-resources-windsor.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://jaystarz1.github.io/Mrs-Tomie-Grooms-Cats/privacy.html</loc>
