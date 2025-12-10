@@ -34,7 +34,249 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css?v=20251210a">
+    <link rel="stylesheet" href="css/style.css?v=20251210b">
+
+    <style>
+        /* Page-specific styles */
+        .article-hero {
+            background: linear-gradient(135deg, rgba(74, 18, 89, 0.85) 0%, rgba(123, 45, 142, 0.85) 100%),
+                        url('images/famous-cats/simon.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+        }
+
+        .article-hero .container {
+            width: 100%;
+        }
+
+        .article-hero h1 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .article-hero .lead {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .article-content {
+            padding: var(--spacing-xxl) 0;
+            background: var(--primary-pale);
+        }
+
+        .article-body {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-body h2 {
+            color: var(--primary-dark);
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--primary-pale);
+        }
+
+        .article-body h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article-body p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .highlight-box {
+            background: var(--white);
+            border-left: 4px solid var(--primary);
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .table-of-contents {
+            background: var(--gray-100);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .table-of-contents h4 {
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-dark);
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            columns: 2;
+        }
+
+        .table-of-contents li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .table-of-contents a {
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .table-of-contents a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .table-of-contents a::before {
+            content: '→';
+            color: var(--primary-light);
+        }
+
+        @media (max-width: 600px) {
+            .table-of-contents ul {
+                columns: 1;
+            }
+        }
+
+        /* Famous cat cards */
+        .famous-cat-card {
+            display: flex;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            background: var(--gray-100);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .famous-cat-card .cat-image {
+            flex-shrink: 0;
+            width: 200px;
+        }
+
+        .famous-cat-card .cat-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+        }
+
+        .famous-cat-card .cat-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .famous-cat-card .cat-info h3 a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .famous-cat-card .cat-info h3 a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .famous-cat-card .cat-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .famous-cat-card .cat-info p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .cat-facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-sm);
+        }
+
+        .fact-badge {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .famous-cat-card {
+                flex-direction: column;
+            }
+
+            .famous-cat-card .cat-image {
+                width: 100%;
+            }
+
+            .famous-cat-card .cat-image img {
+                height: 250px;
+            }
+        }
+
+        /* Article CTA */
+        .article-cta {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: var(--spacing-xl);
+        }
+
+        .article-cta h3 {
+            color: var(--white);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .article-cta p {
+            opacity: 0.9;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .cta-buttons .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+    </style>
 
     <!-- Schema.org JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -94,26 +336,19 @@
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#faq">FAQ</a></li>
-                <li class="nav-dropdown">
-                    <a href="#" class="nav-dropdown-toggle">Locations</a>
-                    <ul class="nav-dropdown-menu">
-                        <li><a href="cat-grooming-toronto.html">Cat Grooming Toronto</a></li>
-                        <li><a href="cat-grooming-windsor.html">Cat Grooming Windsor</a></li>
-                        <li><a href="index.html#locations">Service Areas</a></li>
-                    </ul>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="#" class="nav-dropdown-toggle">Cat Wiki</a>
-                    <ul class="nav-dropdown-menu">
-                        <li><a href="history-of-cats.html">History of Cats</a></li>
-                        <li><a href="cfmg-certification.html">CFMG Certification</a></li>
-                        <li><a href="lion-cut-history.html">The Lion Cut</a></li>
-                        <li><a href="famous-cats.html"><strong>Famous Cats</strong></a></li>
-                    </ul>
-                </li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#locations">Locations</a></li>
                 <li class="nav-dropdown">
                     <a href="#" class="nav-dropdown-toggle">Resources</a>
                     <ul class="nav-dropdown-menu">
+                        <li><a href="history-of-cats.html">History of Cats</a></li>
+                        <li><a href="cfmg-certification.html">CFMG Certification</a></li>
+                        <li><a href="lion-cut-history.html">Lion Cut History</a></li>
+                        <li><a href="famous-cats.html"><strong>Famous Cats</strong></a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a href="cat-grooming-toronto.html">Cat Grooming Toronto</a></li>
+                        <li><a href="cat-grooming-windsor.html">Cat Grooming Windsor</a></li>
+                        <li class="dropdown-divider"></li>
                         <li><a href="cat-resources-toronto.html">Toronto Cat Resources</a></li>
                         <li><a href="cat-resources-windsor.html">Windsor Cat Resources</a></li>
                     </ul>
