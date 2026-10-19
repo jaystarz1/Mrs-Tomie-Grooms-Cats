@@ -1,0 +1,28 @@
+# Exclude internal project harnesses and operational artifacts from the GitHub Pages build.
+# Keep Jekyll's standard build/dependency exclusions while preserving all public pages/assets.
+exclude:
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby
+  - .env
+  - .env.*
+  - session_log.yaml
+  - CLAUDE.md
+  - STYLE-GUIDE.yaml
+  - site_style_canon.yaml
+  - style_guide.yaml
+  - MASTER-BUILD-PROCESS.yaml
+  - WEBSITE-BUILD-PROCESS.yaml
+  - README.md
+  - SEO-AUDIT-REPORT.md
+  - netlify.toml
+  - logs/
+  - reports/
